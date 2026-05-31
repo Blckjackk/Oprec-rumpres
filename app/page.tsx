@@ -1425,11 +1425,11 @@ export default function Home() {
 
                             <div className="space-y-4 pt-2 text-left">
                               <div className="sf-card-line flex items-center gap-1.5 text-[#5B6B54] font-bold text-[9px] tracking-wider uppercase font-serif">
-                                <span>Illustration ✩ Graphic Design</span>
+                                <span>Rumah Prestasi ✩ FPMIPA UPI</span>
                               </div>
 
                               <div className="space-y-1">
-                                <span className="sf-card-line text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase block">KEPUTUSAN RESMI</span>
+                                <span className="sf-card-line text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase block">KEPUTUSAN</span>
                                 <h1 ref={headingUnderlineRef} className="sf-card-line text-3xl font-semibold text-[#5B6B54] tracking-tight leading-[1.1] font-serif animated-underline">
                                   CONGRATS.
                                 </h1>
