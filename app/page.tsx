@@ -4,7 +4,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import departmentsData from '@/data/departments.json';
+import departmentsData from "@/data/departments.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +38,7 @@ interface DepartmentData {
   kadepPhoto: string;
   color: string;
   message: string;
-  leaders?: { name: string; role: string; photo: string; message: string; }[];
+  leaders?: { name: string; role: string; photo: string; message: string }[];
   coordinates?: { x: number; y: number };
 }
 
@@ -61,35 +61,35 @@ const LANDING_DEPARTMENTS = [
   {
     title: "Media dan Informasi",
     tagline: "Mata, Suara, dan Publikasi Kreatif",
-    desc: "Menjadi jembatan informasi bagi seluruh elemen Rumah Prestasi dengan memproduksi publikasi visual, desain grafis, multimedia, serta jurnalistik yang kreatif dan menginspirasi.",
+    desc: "Menjadi jembatan informasi bagi seluruh anggota Rumah Prestasi dan warga FPMIPA dengan memproduksi publikasi visual, desain grafis, multimedia, serta jurnalistik yang kreatif dan menginspirasi.",
     icon: "/divisions/medinfo.svg",
     color: "#06B6D4",
     badge: "MEDIA & CREATIVE",
     feltAppleColor: "#06B6D4",
     rotation: "-3deg",
-    photo: "/divisions/kadep_media_dan_informasi.jpg"
+    photo: "/divisions/kadep_media_dan_informasi.jpg",
   },
   {
     title: "Teknologi dan Rekayasa",
     tagline: "Inovasi Sistem & Platform Digital",
-    desc: "Membangun sistem, infrastruktur digital, and platform web yang andal, solutif, serta menunjang transformasi digital seluruh program kerja di Rumah Prestasi.",
+    desc: "Menekuni perlombaan bidang teknologi, seperti LIDM GEMASTIK dan Satria Data",
     icon: "/divisions/kominfo.svg",
     color: "#1E40AF",
     badge: "DIGITAL & SYSTEM",
     feltAppleColor: "#1E40AF",
     rotation: "2deg",
-    photo: "/divisions/kadep_teknologi_dan_rekayasa.jpg"
+    photo: "/divisions/kadep_teknologi_dan_rekayasa.jpg",
   },
   {
     title: "Pengembangan Sumber Daya Talenta (PSDT)",
     tagline: "Kaderisasi & Pelatihan Kepemimpinan",
-    desc: "Fokus pada pemberdayaan potensi talenta, mengelola sistem kaderisasi berkelanjutan, menyelenggarakan pelatihan kepemimpinan, and membangun keakraban internal.",
+    desc: "Fokus pada pemberdayaan potensi talenta, Memberdayakan Mentor yang Kompeten dibidangnya, menyelenggarakan pelatihan persiapan perlombaan, and membangun keakraban antar anggota Rumah Prestasi FPMIPA.",
     icon: "/divisions/psdm.svg",
     color: "#3B82F6",
     badge: "LEADERSHIP & TALENT",
     feltAppleColor: "#3B82F6",
     rotation: "-4deg",
-    photo: "/divisions/kadep_psdt.jpg"
+    photo: "/divisions/kadep_psdt.jpg",
   },
   {
     title: "Riset dan Kreatifitas",
@@ -100,29 +100,29 @@ const LANDING_DEPARTMENTS = [
     badge: "RESEARCH & CREATIVE",
     feltAppleColor: "#10B981",
     rotation: "3deg",
-    photo: "/divisions/kadep_riset_dan_kreatifitas.jpg"
+    photo: "/divisions/kadep_riset_dan_kreatifitas.jpg",
   },
   {
     title: "Penalaran dan Literasi",
     tagline: "Budaya Membaca & Kajian Akademis",
-    desc: "Membudayakan kegemaran membaca, berdiskusi ilmiah secara kritis, and menyusun kajian strategis untuk menyebarkan kebermanfaatan ilmu pengetahuan.",
+    desc: "Membudayakan kegemaran membaca dan berargument, berdiskusi ilmiah secara kritis, dan mempersiapkan untuk menjadi #MapresnyaFPMIPA",
     icon: "/divisions/litbang.svg",
     color: "#8B5CF6",
     badge: "ACADEMIC & LITERACY",
     feltAppleColor: "#8B5CF6",
     rotation: "-2deg",
-    photo: "/divisions/kadep_penalaran_dan_literasi.jpg"
+    photo: "/divisions/kadep_penalaran_dan_literasi.jpg",
   },
   {
     title: "Seni dan Karakter",
     tagline: "Imajinasi, Ekspresi, & Seni Budaya",
-    desc: "Wadah kreativitas seni dan budaya untuk memperindah Rumah Prestasi. Mengembangkan potensi bakat non-akademis pengurus dalam suasana yang harmonis.",
+    desc: "Wadah kreativitas seni dan mengembangkan karakter untuk memperindah Rumah Prestasi. Mengembangkan potensi bakat non-akademis terutama di bidang keagamaan.",
     icon: "/divisions/senbud.svg",
     color: "#EC4899",
     badge: "ARTS & CULTURE",
     feltAppleColor: "#EC4899",
     rotation: "2deg",
-    photo: "/divisions/kadep_seni_dan_karakter.jpg"
+    photo: "/divisions/kadep_seni_dan_karakter.jpg",
   },
   {
     title: "Sertifikasi",
@@ -133,41 +133,41 @@ const LANDING_DEPARTMENTS = [
     badge: "PROFESSIONAL COMPETENCY",
     feltAppleColor: "#F59E0B",
     rotation: "-3deg",
-    photo: "/divisions/kadep_sertifikasi.jpg"
+    photo: "/divisions/kadep_sertifikasi.jpg",
   },
   {
     title: "Kewirausahaan dan Karir",
     tagline: "Kemandirian Finansial & Mental Bisnis",
-    desc: "Mengembangkan jiwa entrepreneurship melalui unit usaha kreatif, merchandise, dan kolaborasi finansial guna mewujudkan kemandirian ekonomi organisasi.",
+    desc: "Mengembangkan jiwa kewirausahaan melalui unit usaha kreatif, merchandise, dan kolaborasi finansial guna mewujudkan mahasiswa yang pandai berwirausaha",
     icon: "/divisions/kewirus.svg",
     color: "#10B981",
     badge: "BUSINESS & FINTECH",
     feltAppleColor: "#10B981",
     rotation: "3deg",
-    photo: "/divisions/kadep_kewirausaan_dan_karir.jpg"
+    photo: "/divisions/kadep_kewirausaan_dan_karir.jpg",
   },
   {
     title: "Sekretaris Umum",
     tagline: "Administrasi & Pengarsipan Presisi",
-    desc: "Mengelola administrasi surat-menyurat, pengarsipan berkas penting, koordinasi agenda kerja kabinet, and menyusun laporan pertanggungjawaban secara teratur.",
+    desc: "Mengelola administrasi surat-menyurat, pengarsipan berkas penting, koordinasi agenda kerja Rumah Prestasi FPMIPA, and menyusun laporan pertanggungjawaban secara teratur.",
     icon: "/divisions/nondivisi.svg",
     color: "#6B7280",
     badge: "ADMINISTRATION & SECRETARIAT",
     feltAppleColor: "#6B7280",
     rotation: "1deg",
-    photo: "/divisions/sekretaris.jpg"
+    photo: "/divisions/sekretaris.jpg",
   },
   {
     title: "Bendahara Umum",
     tagline: "Transparansi & Pengelolaan Keuangan",
-    desc: "Mengelola arus kas keuangan kabinet, penyusunan anggaran kegiatan, pengawasan realisasi dana, and menyusun laporan keuangan bulanan secara transparan.",
+    desc: "Mengelola arus kas keuangan Rumah Prestasi FPMIPA, penyusunan anggaran kegiatan, pengawasan realisasi dana, and menyusun laporan keuangan secara transparan.",
     icon: "/divisions/nondivisi.svg",
     color: "#10B981",
     badge: "FINANCE & TREASURY",
     feltAppleColor: "#10B981",
     rotation: "-2deg",
-    photo: "/divisions/bendahara.jpg"
-  }
+    photo: "/divisions/bendahara.jpg",
+  },
 ];
 
 const getDeptId = (title: string) => {
@@ -190,28 +190,40 @@ const getDivisionCompetitions = (deptId: string, roleName: string) => {
   const d = deptId.toLowerCase();
 
   if (d === "teknologi") {
-    if (r.includes("gemastik")) return "Mengoordinasikan Kompetisi GEMASTIK Nasional (Ajang IT paling bergengsi tingkat nasional).";
-    if (r.includes("lidm")) return "Mengoordinasikan Lomba Inovasi Digital Mahasiswa (LIDM) Puspresnas.";
+    if (r.includes("gemastik"))
+      return "Mengoordinasikan Kompetisi GEMASTIK Nasional (Ajang IT paling bergengsi tingkat nasional).";
+    if (r.includes("lidm"))
+      return "Mengoordinasikan Lomba Inovasi Digital Mahasiswa (LIDM) Puspresnas.";
   }
   if (d === "seni") {
-    if (r.includes("mtq")) return "Mengoordinasikan Musabaqah Tilawatil Qur'an (MTQ) Mahasiswa Nasional.";
-    if (r.includes("seni")) return "Mengoordinasikan Festival & Kompetisi Seni Budaya Mahasiswa.";
+    if (r.includes("mtq"))
+      return "Mengoordinasikan Musabaqah Tilawatil Qur'an (MTQ) Mahasiswa Nasional.";
+    if (r.includes("seni"))
+      return "Mengoordinasikan Festival & Kompetisi Seni Budaya Mahasiswa.";
   }
   if (d === "medinfo") {
-    if (r.includes("publikasi")) return "Mengoordinasikan branding media, publikasi visual, & dokumentasi resmi kabinet.";
-    if (r.includes("design")) return "Mengoordinasikan produksi aset visual grafis, motion design, & konten kreatif.";
+    if (r.includes("publikasi"))
+      return "Mengoordinasikan branding media, publikasi visual, & dokumentasi resmi kabinet.";
+    if (r.includes("design"))
+      return "Mengoordinasikan produksi aset visual grafis, motion design, & konten kreatif.";
   }
   if (d === "literasi") {
-    if (r.includes("pilmapres")) return "Mengoordinasikan Pemilihan Mahasiswa Berprestasi (Pilmapres) tingkat Fakultas & Universitas.";
-    if (r.includes("nudc") || r.includes("kdmi")) return "Mengoordinasikan Kompetisi Debat Bahasa Inggris (NUDC) & Debat Bahasa Indonesia (KDMI).";
+    if (r.includes("pilmapres"))
+      return "Mengoordinasikan Pemilihan Mahasiswa Berprestasi (Pilmapres) tingkat Fakultas & Universitas.";
+    if (r.includes("nudc") || r.includes("kdmi"))
+      return "Mengoordinasikan Kompetisi Debat Bahasa Inggris (NUDC) & Debat Bahasa Indonesia (KDMI).";
   }
   if (d === "riset") {
-    if (r.includes("pkm")) return "Mengoordinasikan Program Kreativitas Mahasiswa (PKM) 5 Bidang & PKM-GFK menuju PIMNAS.";
-    if (r.includes("on-mipa") || r.includes("onmipa")) return "Mengoordinasikan Olimpiade Nasional Matematika & Ilmu Pengetahuan Alam (ON-MIPA).";
+    if (r.includes("pkm"))
+      return "Mengoordinasikan Program Kreativitas Mahasiswa (PKM) 5 Bidang & PKM-GFK menuju PIMNAS.";
+    if (r.includes("on-mipa") || r.includes("onmipa"))
+      return "Mengoordinasikan Olimpiade Nasional Matematika & Ilmu Pengetahuan Alam (ON-MIPA).";
   }
   if (d === "kewirausahaan") {
-    if (r.includes("p2mw")) return "Mengoordinasikan Program Pembinaan Mahasiswa Wirausaha (P2MW) Kemendikbudristek.";
-    if (r.includes("inkubator")) return "Mengoordinasikan program pembinaan wirausaha muda, mentoring bisnis, & scale-up startup.";
+    if (r.includes("p2mw"))
+      return "Mengoordinasikan Program Pembinaan Mahasiswa Wirausaha (P2MW) Kemendikbudristek.";
+    if (r.includes("inkubator"))
+      return "Mengoordinasikan program pembinaan wirausaha muda, mentoring bisnis, & scale-up startup.";
   }
   return "Membina pembinaan minat-bakat serta menyalurkan delegasi kompetisi resmi nasional.";
 };
@@ -229,7 +241,8 @@ export default function Home() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [applicantsList, setApplicantsList] = useState<ApplicantData[]>([]);
-  const [departmentsList, setDepartmentsList] = useState<DepartmentData[]>(departmentsData);
+  const [departmentsList, setDepartmentsList] =
+    useState<DepartmentData[]>(departmentsData);
   const [dataReady, setDataReady] = useState(false);
 
   // Responsive state and Premium Interactive helpers
@@ -238,7 +251,9 @@ export default function Home() {
   const isMuted = true;
 
   // Unboxing & Celebration Scene States
-  const [scene, setScene] = useState<"login" | "intro" | "envelope" | "letters" | "celebration">("login");
+  const [scene, setScene] = useState<
+    "login" | "intro" | "envelope" | "letters" | "celebration"
+  >("login");
   const [activeLetter, setActiveLetter] = useState(0);
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
 
@@ -261,86 +276,101 @@ export default function Home() {
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   // 0A. Pure-JS real-time Web Audio API synthesizer for satisfying SFX (100% offline-compatible)
-  const playSFX = useCallback((type: "pop" | "whoosh" | "chimes") => {
-    if (isMuted) return;
-    try {
-      if (!audioCtxRef.current) {
-        audioCtxRef.current = new (window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext)();
-      }
-      const ctx = audioCtxRef.current;
-      if (ctx.state === "suspended") {
-        ctx.resume();
-      }
-
-      const now = ctx.currentTime;
-
-      if (type === "pop") {
-        // Satisfying physical wax seal crack/pop
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(180, now);
-        osc.frequency.exponentialRampToValueAtTime(45, now + 0.08);
-
-        gain.gain.setValueAtTime(0.2, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(now);
-        osc.stop(now + 0.08);
-      } else if (type === "whoosh") {
-        // Satisfying paper flip / slide whoosh
-        const bufferSize = ctx.sampleRate * 0.3;
-        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        const data = buffer.getChannelData(0);
-        for (let i = 0; i < bufferSize; i++) {
-          data[i] = Math.random() * 2 - 1;
+  const playSFX = useCallback(
+    (type: "pop" | "whoosh" | "chimes") => {
+      if (isMuted) return;
+      try {
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new (
+            window.AudioContext ||
+            (
+              window as typeof window & {
+                webkitAudioContext?: typeof AudioContext;
+              }
+            ).webkitAudioContext
+          )();
         }
-        const noise = ctx.createBufferSource();
-        noise.buffer = buffer;
+        const ctx = audioCtxRef.current;
+        if (ctx.state === "suspended") {
+          ctx.resume();
+        }
 
-        const filter = ctx.createBiquadFilter();
-        filter.type = "bandpass";
-        filter.frequency.setValueAtTime(500, now);
-        filter.frequency.exponentialRampToValueAtTime(1100, now + 0.12);
-        filter.frequency.exponentialRampToValueAtTime(350, now + 0.3);
-        filter.Q.value = 2.2;
+        const now = ctx.currentTime;
 
-        const gain = ctx.createGain();
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(0.09, now + 0.08);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-
-        noise.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-
-        noise.start(now);
-      } else if (type === "chimes") {
-        // Ascending magical pentatonic arpeggio sweep for selebrasi
-        const freqs = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50, 1174.66, 1318.51];
-        freqs.forEach((freq, idx) => {
+        if (type === "pop") {
+          // Satisfying physical wax seal crack/pop
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
-          osc.type = "triangle";
-          osc.frequency.setValueAtTime(freq, now + idx * 0.04);
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.exponentialRampToValueAtTime(45, now + 0.08);
 
-          gain.gain.setValueAtTime(0, now);
-          gain.gain.linearRampToValueAtTime(0.045, now + idx * 0.04 + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.04 + 0.35);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
 
           osc.connect(gain);
           gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        } else if (type === "whoosh") {
+          // Satisfying paper flip / slide whoosh
+          const bufferSize = ctx.sampleRate * 0.3;
+          const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = Math.random() * 2 - 1;
+          }
+          const noise = ctx.createBufferSource();
+          noise.buffer = buffer;
 
-          osc.start(now + idx * 0.04);
-          osc.stop(now + idx * 0.04 + 0.35);
-        });
+          const filter = ctx.createBiquadFilter();
+          filter.type = "bandpass";
+          filter.frequency.setValueAtTime(500, now);
+          filter.frequency.exponentialRampToValueAtTime(1100, now + 0.12);
+          filter.frequency.exponentialRampToValueAtTime(350, now + 0.3);
+          filter.Q.value = 2.2;
+
+          const gain = ctx.createGain();
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(0.09, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(ctx.destination);
+
+          noise.start(now);
+        } else if (type === "chimes") {
+          // Ascending magical pentatonic arpeggio sweep for selebrasi
+          const freqs = [
+            523.25, 587.33, 659.25, 783.99, 880.0, 1046.5, 1174.66, 1318.51,
+          ];
+          freqs.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = "triangle";
+            osc.frequency.setValueAtTime(freq, now + idx * 0.04);
+
+            gain.gain.setValueAtTime(0, now);
+            gain.gain.linearRampToValueAtTime(0.045, now + idx * 0.04 + 0.02);
+            gain.gain.exponentialRampToValueAtTime(
+              0.001,
+              now + idx * 0.04 + 0.35,
+            );
+
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start(now + idx * 0.04);
+            osc.stop(now + idx * 0.04 + 0.35);
+          });
+        }
+      } catch (e) {
+        console.warn("Failed playing SFX:", e);
       }
-    } catch (e) {
-      console.warn("Failed playing SFX:", e);
-    }
-  }, [isMuted]);
+    },
+    [isMuted],
+  );
 
   // 0C. Click-to-Burst cursor confetti emitter
   const handlePageClick = (e: React.MouseEvent) => {
@@ -361,11 +391,13 @@ export default function Home() {
         speedX: (Math.random() - 0.5) * 6,
         rotation: Math.random() * 360,
         rotationSpeed: Math.random() * 4 - 2,
-        shape: shapes[Math.floor(Math.random() * shapes.length)] as "rect" | "circle" | "star",
+        shape: shapes[Math.floor(Math.random() * shapes.length)] as
+          | "rect"
+          | "circle"
+          | "star",
       });
     }
   };
-
 
   // Window Resize & Client detection (prevents hydration mismatch)
   useEffect(() => {
@@ -418,13 +450,16 @@ export default function Home() {
     };
     window.addEventListener("resize", handleResize);
 
-
-
     const colors = ["#C36B62", "#D4A828", "#5B6B54", "#B8A88A", "#1B5E9E"];
     const shapes: Particle["shape"][] = ["rect", "circle", "star"];
 
     // Multi-burst: 3 waves from different origins
-    const createBurst = (originX: number, originY: number, count: number, delay: number) => {
+    const createBurst = (
+      originX: number,
+      originY: number,
+      count: number,
+      delay: number,
+    ) => {
       setTimeout(() => {
         for (let i = 0; i < count; i++) {
           particles.push({
@@ -445,7 +480,7 @@ export default function Home() {
     particlesRef.current = [];
     const particles = particlesRef.current;
     // Elegant, smaller burst waves
-    createBurst(0.15, 0.6, 40, 0);   // left
+    createBurst(0.15, 0.6, 40, 0); // left
     createBurst(0.85, 0.6, 40, 200); // right
     createBurst(0.5, 0.25, 50, 400); // top center
 
@@ -466,11 +501,11 @@ export default function Home() {
       ctx.clearRect(0, 0, width, height);
 
       // Filter out particles that fell off the screen (no infinite recycling loop)
-      const activeParticles = particles.filter(p => p.y <= height + 20);
+      const activeParticles = particles.filter((p) => p.y <= height + 20);
       particles.length = 0;
       particles.push(...activeParticles);
 
-      particles.forEach(p => {
+      particles.forEach((p) => {
         p.speedY += gravity;
         p.y += p.speedY;
         p.x += p.speedX;
@@ -504,11 +539,13 @@ export default function Home() {
         setTimeout(() => {
           const sparkle = document.createElement("span");
           sparkle.className = "sparkle";
-          sparkle.textContent = sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
+          sparkle.textContent =
+            sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
           sparkle.style.left = `${Math.random() * 100}%`;
           sparkle.style.top = `${Math.random() * 100}%`;
           sparkle.style.fontSize = `${Math.random() * 16 + 10}px`;
-          sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+          sparkle.style.color =
+            colors[Math.floor(Math.random() * colors.length)];
           container.appendChild(sparkle);
           setTimeout(() => sparkle.remove(), 1400);
         }, i * 180);
@@ -524,7 +561,8 @@ export default function Home() {
   // 2b. Ambient Particle Background (envelope & letters scenes)
   useEffect(() => {
     if (!applicant || !particleCanvasRef.current) return;
-    if (scene !== "envelope" && scene !== "letters" && scene !== "intro") return;
+    if (scene !== "envelope" && scene !== "letters" && scene !== "intro")
+      return;
     if (getReducedMotion()) return;
     const canvas = particleCanvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -540,7 +578,10 @@ export default function Home() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
-    const handleMouse = (e: MouseEvent) => { mouseX = e.clientX; mouseY = e.clientY; };
+    const handleMouse = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
     window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", handleMouse);
 
@@ -548,7 +589,14 @@ export default function Home() {
     const count = isMobile ? 35 : 70;
     const pColors = ["#B8A88A", "#5B6B54", "#C36B62", "#D4A828"];
 
-    interface Dot { x: number; y: number; vx: number; vy: number; r: number; color: string; }
+    interface Dot {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      r: number;
+      color: string;
+    }
     const dots: Dot[] = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -566,7 +614,7 @@ export default function Home() {
         const dy = d.y - mouseY;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 80 && dist > 0) {
-          const force = (80 - dist) / 80 * 0.8;
+          const force = ((80 - dist) / 80) * 0.8;
           d.vx += (dx / dist) * force;
           d.vy += (dy / dist) * force;
         }
@@ -621,11 +669,16 @@ export default function Home() {
     const ring = cursorRingRef.current;
     if (!dot || !ring) return;
 
-    let mx = 0, my = 0;
-    let rx = 0, ry = 0;
+    let mx = 0,
+      my = 0;
+    let rx = 0,
+      ry = 0;
     let rafId: number;
 
-    const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX;
+      my = e.clientY;
+    };
     window.addEventListener("mousemove", onMove);
 
     const lerp = () => {
@@ -664,30 +717,38 @@ export default function Home() {
     if (scene !== "letters") return;
 
     // Slide & slight rotation for the card
-    gsap.fromTo(".sf-card", {
-      opacity: 0,
-      y: 50,
-      rotate: activeLetter % 2 === 0 ? -1 : 1
-    }, {
-      opacity: 1,
-      y: 0,
-      rotate: activeLetter % 2 === 0 ? -1.5 : 1.5,
-      duration: 0.6,
-      ease: "power2.out"
-    });
+    gsap.fromTo(
+      ".sf-card",
+      {
+        opacity: 0,
+        y: 50,
+        rotate: activeLetter % 2 === 0 ? -1 : 1,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotate: activeLetter % 2 === 0 ? -1.5 : 1.5,
+        duration: 0.6,
+        ease: "power2.out",
+      },
+    );
 
     // Stagger each line of text
-    gsap.fromTo(".sf-card-line", {
-      opacity: 0,
-      y: 15
-    }, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.1,
-      duration: 0.45,
-      ease: "power2.out",
-      delay: 0.15
-    });
+    gsap.fromTo(
+      ".sf-card-line",
+      {
+        opacity: 0,
+        y: 15,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.45,
+        ease: "power2.out",
+        delay: 0.15,
+      },
+    );
   }, [activeLetter, scene]);
 
   // 4. Envelope Opening Sequence
@@ -701,35 +762,39 @@ export default function Home() {
         setTimeout(() => {
           setScene("letters");
         }, 600);
-      }
+      },
     });
 
     // Flip flap open
     tl.to(".envelope-flap", {
       rotateX: 180,
       duration: 0.6,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     });
 
     // Wax Seal fade out
-    tl.to(".envelope-wax-seal", {
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.3
-    }, "-=0.3");
+    tl.to(
+      ".envelope-wax-seal",
+      {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.3,
+      },
+      "-=0.3",
+    );
 
     // Paper preview slide out
     tl.to(".envelope-paper-preview", {
       y: -60,
       duration: 0.45,
-      ease: "back.out(1.5)"
+      ease: "back.out(1.5)",
     });
 
     // Shrink envelope wrapper
     tl.to(".envelope-wrapper", {
       scale: 0.9,
       opacity: 0,
-      duration: 0.4
+      duration: 0.4,
     });
   };
 
@@ -758,11 +823,24 @@ export default function Home() {
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    gsap.to(btn, { x: x * 0.25, y: y * 0.25, duration: 0.3, ease: "power2.out" });
+    gsap.to(btn, {
+      x: x * 0.25,
+      y: y * 0.25,
+      duration: 0.3,
+      ease: "power2.out",
+    });
   }, []);
-  const handleMagneticLeave = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    gsap.to(e.currentTarget, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
-  }, []);
+  const handleMagneticLeave = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      gsap.to(e.currentTarget, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.4)",
+      });
+    },
+    [],
+  );
 
   // 4d. Animated underline trigger when letters scene appears
   useEffect(() => {
@@ -778,9 +856,18 @@ export default function Home() {
     if (scene !== "celebration" || !nameRef.current) return;
     if (getReducedMotion()) return;
     const chars = nameRef.current.querySelectorAll(".name-char");
-    gsap.fromTo(chars, { opacity: 0, y: 12 }, {
-      opacity: 1, y: 0, stagger: 0.04, duration: 0.4, ease: "back.out(2)", delay: 0.3
-    });
+    gsap.fromTo(
+      chars,
+      { opacity: 0, y: 12 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.04,
+        duration: 0.4,
+        ease: "back.out(2)",
+        delay: 0.3,
+      },
+    );
   }, [scene]);
 
   // 3D perspective layout style calculations for Results cards (Scenic Envelope)
@@ -795,42 +882,42 @@ export default function Home() {
         transform: "translateX(0) translateZ(80px) rotateY(0deg) scale(1.02)",
         zIndex: 50,
         opacity: 1,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === -1) {
       return {
         transform: `translateX(-${offset}px) translateZ(0px) rotateY(25deg) scale(${isMobile ? 0.75 : 0.85}) rotate(-3deg)`,
         zIndex: 30,
         opacity: isMobile ? 0.45 : 0.65,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === 1) {
       return {
         transform: `translateX(${offset}px) translateZ(0px) rotateY(-25deg) scale(${isMobile ? 0.75 : 0.85}) rotate(3deg)`,
         zIndex: 30,
         opacity: isMobile ? 0.45 : 0.65,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === -2) {
       return {
         transform: `translateX(-${farOffset}px) translateZ(-40px) rotateY(40deg) scale(${isMobile ? 0.6 : 0.7}) rotate(-6deg)`,
         zIndex: 10,
         opacity: isMobile ? 0 : 0.2,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     } else if (diff === 2) {
       return {
         transform: `translateX(${farOffset}px) translateZ(-40px) rotateY(-40deg) scale(${isMobile ? 0.6 : 0.7}) rotate(6deg)`,
         zIndex: 10,
         opacity: isMobile ? 0 : 0.2,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     } else {
       return {
         transform: `translateX(${diff > 0 ? farOffset + 100 : -farOffset - 100}px) translateZ(-80px) rotateY(0deg) scale(0.5)`,
         zIndex: 0,
         opacity: 0,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     }
   };
@@ -840,7 +927,7 @@ export default function Home() {
     const N = LANDING_DEPARTMENTS.length;
     let diff = index - activeLandingCard;
     // Circular wrap to range [-N/2, N/2] i.e. [-5, 4]
-    diff = ((diff + N / 2) % N + N) % N - N / 2;
+    diff = ((((diff + N / 2) % N) + N) % N) - N / 2;
 
     const isMobile = windowWidth < 640;
     const offset = isMobile ? 115 : 210;
@@ -851,42 +938,42 @@ export default function Home() {
         transform: "translateX(0) translateZ(80px) rotateY(0deg) scale(1.02)",
         zIndex: 50,
         opacity: 1,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === -1) {
       return {
         transform: `translateX(-${offset}px) translateZ(0px) rotateY(25deg) scale(${isMobile ? 0.75 : 0.85}) rotate(-3deg)`,
         zIndex: 30,
         opacity: isMobile ? 0.5 : 0.7,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === 1) {
       return {
         transform: `translateX(${offset}px) translateZ(0px) rotateY(-25deg) scale(${isMobile ? 0.75 : 0.85}) rotate(3deg)`,
         zIndex: 30,
         opacity: isMobile ? 0.5 : 0.7,
-        pointerEvents: "auto" as const
+        pointerEvents: "auto" as const,
       };
     } else if (diff === -2) {
       return {
         transform: `translateX(-${farOffset}px) translateZ(-40px) rotateY(40deg) scale(${isMobile ? 0.6 : 0.7}) rotate(-6deg)`,
         zIndex: 10,
         opacity: isMobile ? 0 : 0.25,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     } else if (diff === 2) {
       return {
         transform: `translateX(${farOffset}px) translateZ(-40px) rotateY(-40deg) scale(${isMobile ? 0.6 : 0.7}) rotate(6deg)`,
         zIndex: 10,
         opacity: isMobile ? 0 : 0.25,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     } else {
       return {
         transform: `translateX(${diff > 0 ? farOffset + 100 : -farOffset - 100}px) translateZ(-80px) rotateY(0deg) scale(0.5)`,
         zIndex: 0,
         opacity: 0,
-        pointerEvents: "none" as const
+        pointerEvents: "none" as const,
       };
     }
   };
@@ -916,16 +1003,56 @@ export default function Home() {
   useEffect(() => {
     if (!containerRef.current || applicant) return;
     const ctx = gsap.context(() => {
-      gsap.fromTo(".nav-bar", { y: -45, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.1,
-      });
-      gsap.fromTo(".hero-el", { y: 40, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.75, stagger: 0.12, ease: "power2.out", delay: 0.2,
-      });
+      gsap.fromTo(
+        ".nav-bar",
+        { y: -45, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.1,
+        },
+      );
+      gsap.fromTo(
+        ".hero-el",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+          stagger: 0.12,
+          ease: "power2.out",
+          delay: 0.2,
+        },
+      );
       // Floating ambient shapes
-      gsap.to(".cloud-a", { y: -12, x: 6, duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 });
-      gsap.to(".cloud-b", { y: 10, x: -7, duration: 7, ease: "sine.inOut", yoyo: true, repeat: -1, delay: -2 });
-      gsap.to(".cloud-c", { y: -8, x: 5, duration: 8, ease: "sine.inOut", yoyo: true, repeat: -1, delay: -4 });
+      gsap.to(".cloud-a", {
+        y: -12,
+        x: 6,
+        duration: 6,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+      gsap.to(".cloud-b", {
+        y: 10,
+        x: -7,
+        duration: 7,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: -2,
+      });
+      gsap.to(".cloud-c", {
+        y: -8,
+        x: 5,
+        duration: 8,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: -4,
+      });
     }, containerRef);
     return () => ctx.revert();
   }, [applicant]);
@@ -934,22 +1061,49 @@ export default function Home() {
   useEffect(() => {
     if (!resultRef.current || !applicant) return;
     const ctx = gsap.context(() => {
-      gsap.fromTo(".res-head", { y: 25, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.6, ease: "power2.out", delay: 0.1,
-      });
-      gsap.fromTo(".res-card", { y: 35, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: "power2.out", delay: 0.25,
-      });
-      gsap.fromTo(".res-action", { y: 15, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.4, ease: "power2.out", delay: 0.7,
-      });
+      gsap.fromTo(
+        ".res-head",
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          delay: 0.1,
+        },
+      );
+      gsap.fromTo(
+        ".res-card",
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power2.out",
+          delay: 0.25,
+        },
+      );
+      gsap.fromTo(
+        ".res-action",
+        { y: 15, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+          delay: 0.7,
+        },
+      );
     }, resultRef);
     return () => ctx.revert();
   }, [applicant]);
 
   /* ---- Scroll to NIM Portal ---- */
   const scrollToPortal = () => {
-    document.getElementById("check-portal")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("check-portal")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   /* ---- NIM submit ---- */
@@ -970,9 +1124,14 @@ export default function Home() {
 
     setTimeout(() => {
       const found = applicantsList.find(
-        (a) => a.nim === trimmed || a.nim.toLowerCase() === trimmed.toLowerCase()
+        (a) =>
+          a.nim === trimmed || a.nim.toLowerCase() === trimmed.toLowerCase(),
       );
-      if (!found) { setNotFound(true); setIsLoading(false); return; }
+      if (!found) {
+        setNotFound(true);
+        setIsLoading(false);
+        return;
+      }
       setApplicant(found);
       setScene("intro");
       setIsLoading(false);
@@ -981,16 +1140,23 @@ export default function Home() {
 
   const handleLogout = () => {
     setApplicant(null);
-    setNim(""); setNotFound(false); setError("");
-    setScene("login"); setActiveLetter(0); setEnvelopeOpen(false);
+    setNim("");
+    setNotFound(false);
+    setError("");
+    setScene("login");
+    setActiveLetter(0);
+    setEnvelopeOpen(false);
   };
 
   /* ======================================================
      RENDER
      ====================================================== */
   return (
-    <div ref={containerRef} className="relative min-h-screen flex flex-col bg-rp-hero overflow-x-hidden cursor-none sm:cursor-none" style={{ cursor: isTouch ? 'auto' : undefined }}>
-
+    <div
+      ref={containerRef}
+      className="relative min-h-screen flex flex-col bg-rp-hero overflow-x-hidden cursor-none sm:cursor-none"
+      style={{ cursor: isTouch ? "auto" : undefined }}
+    >
       {/* ── Grain texture overlay ── */}
       <div className="grain-overlay" />
 
@@ -998,7 +1164,12 @@ export default function Home() {
       {applicant && <div className="vignette" />}
 
       {/* ── Ambient particle canvas (unboxing scenes) ── */}
-      {applicant && <canvas ref={particleCanvasRef} className="pointer-events-none fixed inset-0 z-0 w-full h-full" />}
+      {applicant && (
+        <canvas
+          ref={particleCanvasRef}
+          className="pointer-events-none fixed inset-0 z-0 w-full h-full"
+        />
+      )}
 
       {/* ── Custom cursor (desktop only) ── */}
       <div ref={cursorDotRef} className="cursor-dot" />
@@ -1040,7 +1211,10 @@ export default function Home() {
                 Cek NIM
               </button>
             ) : (
-              <button onClick={handleLogout} className="btn-light text-xs px-3.5 py-1.5 rounded-lg font-sans">
+              <button
+                onClick={handleLogout}
+                className="btn-light text-xs px-3.5 py-1.5 rounded-lg font-sans"
+              >
                 Keluar
               </button>
             )}
@@ -1050,11 +1224,9 @@ export default function Home() {
 
       {/* ── Main ── */}
       <main className="relative z-10 flex-1 flex flex-col justify-center items-center w-full max-w-5xl mx-auto px-4 py-8">
-
         {!applicant ? (
           /* ========== LANDING PAGE VIEW (Flowblox Styled) ========== */
           <div className="w-full flex flex-col items-center py-6 sm:py-10">
-
             {/* Hero Section */}
             <div className="text-center max-w-3xl mb-12 flex flex-col items-center">
               <div className="hero-el badge-gold mb-5 mx-auto animate-pulse flex items-center gap-1.5">
@@ -1063,16 +1235,20 @@ export default function Home() {
               </div>
 
               <h1 className="hero-el flow-hero-title mb-5">
-                Selamat Datang  <br className="sm:hidden" />
-                Orang Orang Hebat di<br />
+                Selamat Datang <br className="sm:hidden" />
+                Orang Orang Hebat di
+                <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C36B62] to-[#B8A88A]">
                   Rumah Prestasi FPMIPA
                 </span>
               </h1>
 
               <p className="hero-el text-xs sm:text-[14px] text-[#4A7BA5] max-w-xl mx-auto leading-relaxed mb-8">
-                Tempat untuk kamu membuka lembaran , ukir prestasi terbaik, dan tumbuh bersama keluarga juara.
-                <span className="block mt-2 font-bold text-[#B8A88A] text-sm">#JuaranyaFPMIPA</span>
+                Tempat untuk kamu membuka lembaran , ukir prestasi terbaik, dan
+                tumbuh bersama keluarga juara.
+                <span className="block mt-2 font-bold text-[#B8A88A] text-sm">
+                  #JuaranyaFPMIPA
+                </span>
               </p>
 
               <button
@@ -1088,15 +1264,21 @@ export default function Home() {
             {/* 3D curved department cards perspective carousel (Flowblox style team arc) */}
             <div className="hero-el w-full flex flex-col items-center gap-6 py-6 overflow-visible mb-16">
               <div className="text-center space-y-1">
-                <span className="text-[10px] font-bold text-[#B8A88A] tracking-widest uppercase block">Mari Mengenal</span>
-                <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#0D2B4E]">Departemen Rumah Prestasi FPMIPA</h2>
+                <span className="text-[10px] font-bold text-[#B8A88A] tracking-widest uppercase block">
+                  Mari Mengenal
+                </span>
+                <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#0D2B4E]">
+                  Departemen Rumah Prestasi FPMIPA
+                </h2>
               </div>
 
               {/* 3D Curved deck container */}
               <div className="relative w-full h-[320px] sm:h-[350px] flex items-center justify-center perspective-[1200px] overflow-visible mt-4 mb-2">
                 {LANDING_DEPARTMENTS.map((dept, idx) => {
                   const cardStyle = getLandingCardStyle(idx);
-                  const matchedDept = departmentsList.find(d => d.id === getDeptId(dept.title));
+                  const matchedDept = departmentsList.find(
+                    (d) => d.id === getDeptId(dept.title),
+                  );
                   const leaders = matchedDept?.leaders || [];
                   return (
                     <div
@@ -1114,7 +1296,10 @@ export default function Home() {
                       {/* Department card element with Sarah Ferguson stitched details */}
                       <div className="sf-card w-full h-full p-6 sm:p-7 flex flex-col justify-between border border-[#8B7E66]/40 shadow-md relative bg-linen-ivory">
                         <div className="sf-stitched-border" />
-                        <div className="sf-paperclip" style={{ right: "32px" }} />
+                        <div
+                          className="sf-paperclip"
+                          style={{ right: "32px" }}
+                        />
 
                         {/* Custom decorative felt apple inside the landing cards */}
                         <div
@@ -1127,7 +1312,11 @@ export default function Home() {
 
                         <div className="text-left space-y-3 pt-2">
                           <span
-                            style={{ color: dept.color, borderColor: `${dept.color}25`, backgroundColor: `${dept.color}08` }}
+                            style={{
+                              color: dept.color,
+                              borderColor: `${dept.color}25`,
+                              backgroundColor: `${dept.color}08`,
+                            }}
                             className="inline-block text-[8px] font-bold tracking-wider px-2 py-0.5 rounded border uppercase"
                           >
                             {dept.badge}
@@ -1141,8 +1330,16 @@ export default function Home() {
                         {leaders && leaders.length > 0 ? (
                           <div className="my-3 flex -space-x-3 sm:-space-x-4 hover:space-x-1 sm:hover:space-x-1.5 transition-all duration-300 justify-center items-center overflow-visible">
                             {leaders.map((leader, lIdx) => {
-                              const rotation = lIdx === 0 ? "rotate-[-6deg]" : lIdx === 1 ? "rotate-[5deg]" : "rotate-[-3deg]";
-                              const sizeClass = leaders.length === 3 ? "w-18 h-18 sm:w-22 sm:h-22" : "w-22 h-22 sm:w-26 sm:h-26";
+                              const rotation =
+                                lIdx === 0
+                                  ? "rotate-[-6deg]"
+                                  : lIdx === 1
+                                    ? "rotate-[5deg]"
+                                    : "rotate-[-3deg]";
+                              const sizeClass =
+                                leaders.length === 3
+                                  ? "w-18 h-18 sm:w-22 sm:h-22"
+                                  : "w-22 h-22 sm:w-26 sm:h-26";
                               return (
                                 <div
                                   key={lIdx}
@@ -1193,7 +1390,11 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => {
-                    const matched = departmentsList.find(d => d.id === getDeptId(LANDING_DEPARTMENTS[activeLandingCard].title));
+                    const matched = departmentsList.find(
+                      (d) =>
+                        d.id ===
+                        getDeptId(LANDING_DEPARTMENTS[activeLandingCard].title),
+                    );
                     setSelectedDept(matched || null);
                   }}
                   className="btn-light text-[10px] font-bold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition-all duration-200 cursor-pointer border border-[#8B7E66]/20 bg-white"
@@ -1205,7 +1406,13 @@ export default function Home() {
               {/* Navigation dots and arrows */}
               <div className="flex items-center gap-4">
                 <button
-                  onClick={() => setActiveLandingCard(prev => (prev - 1 + LANDING_DEPARTMENTS.length) % LANDING_DEPARTMENTS.length)}
+                  onClick={() =>
+                    setActiveLandingCard(
+                      (prev) =>
+                        (prev - 1 + LANDING_DEPARTMENTS.length) %
+                        LANDING_DEPARTMENTS.length,
+                    )
+                  }
                   className="btn-light text-[10px] px-3 py-1 rounded-full cursor-pointer"
                 >
                   ←
@@ -1220,7 +1427,11 @@ export default function Home() {
                   ))}
                 </div>
                 <button
-                  onClick={() => setActiveLandingCard(prev => (prev + 1) % LANDING_DEPARTMENTS.length)}
+                  onClick={() =>
+                    setActiveLandingCard(
+                      (prev) => (prev + 1) % LANDING_DEPARTMENTS.length,
+                    )
+                  }
                   className="btn-light text-[10px] px-3 py-1 rounded-full cursor-pointer"
                 >
                   →
@@ -1229,8 +1440,10 @@ export default function Home() {
             </div>
 
             {/* NIM Check Dedicated Section (id="check-portal") */}
-            <div id="check-portal" className="hero-el w-full max-w-[440px] mt-4">
-
+            <div
+              id="check-portal"
+              className="hero-el w-full max-w-[440px] mt-4"
+            >
               {/* Luxury Envelope styled check card */}
               <div className="sf-card w-full p-8 sm:p-9 border border-[#8B7E66]/50 shadow-xl relative overflow-hidden bg-linen-ivory">
                 <div className="sf-stitched-border" />
@@ -1238,22 +1451,34 @@ export default function Home() {
 
                 {/* Gold wax seal at top center */}
                 <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-[#ECA628] to-[#B26C08] rounded-full border-2 border-[#F3C46B] shadow-md flex items-center justify-center z-10 animate-floatGentle">
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 </div>
 
                 <div className="text-center space-y-3 mb-6 pt-5">
-                  <span className="text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase">CEK STATUS RESMI</span>
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0D2B4E]">Portal Kelulusan</h3>
+                  <span className="text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase">
+                    CEK STATUS RESMI
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0D2B4E]">
+                    Portal Kelulusan
+                  </h3>
                   <p className="text-[11px] text-[#4A7BA5] leading-relaxed max-w-xs mx-auto">
-                    Silakan ketik Nomor Induk Mahasiswa (NIM) Anda untuk membuka amplop pengumuman hasil seleksi.
+                    Silakan ketik Nomor Induk Mahasiswa (NIM) Anda untuk membuka
+                    amplop pengumuman hasil seleksi.
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="relative">
-                    <label htmlFor="nim-input" className="block text-[9px] font-bold text-[#B8A88A] tracking-wider uppercase mb-2 text-left pl-1">
+                    <label
+                      htmlFor="nim-input"
+                      className="block text-[9px] font-bold text-[#B8A88A] tracking-wider uppercase mb-2 text-left pl-1"
+                    >
                       Nomor Induk Mahasiswa (NIM)
                     </label>
                     <input
@@ -1264,16 +1489,28 @@ export default function Home() {
                       placeholder="cth: 2401001"
                       value={nim}
                       maxLength={10}
-                      onChange={(e) => { setNim(e.target.value); setError(""); setNotFound(false); }}
-                      className={`w-full rounded-xl px-4 py-3 bg-[#FCFAF2] border ${error || notFound ? "border-red-400 focus:border-red-500" : "border-[#B8A88A]/40 focus:border-[#5B6B54]"
-                        } text-[#0D2B4E] font-medium text-center tracking-[0.15em] placeholder:text-[#B8A88A]/50 placeholder:tracking-normal placeholder:text-xs outline-none transition-all duration-200 focus-ring font-sans`}
+                      onChange={(e) => {
+                        setNim(e.target.value);
+                        setError("");
+                        setNotFound(false);
+                      }}
+                      className={`w-full rounded-xl px-4 py-3 bg-[#FCFAF2] border ${
+                        error || notFound
+                          ? "border-red-400 focus:border-red-500"
+                          : "border-[#B8A88A]/40 focus:border-[#5B6B54]"
+                      } text-[#0D2B4E] font-medium text-center tracking-[0.15em] placeholder:text-[#B8A88A]/50 placeholder:tracking-normal placeholder:text-xs outline-none transition-all duration-200 focus-ring font-sans`}
                     />
                     {error && (
-                      <p className="text-xs text-red-500 mt-2 text-center">{error}</p>
+                      <p className="text-xs text-red-500 mt-2 text-center">
+                        {error}
+                      </p>
                     )}
                     {notFound && (
                       <p className="text-xs text-red-500 mt-2 text-center leading-relaxed">
-                        NIM tidak terdaftar. <span className="text-[#4A7BA5] block">Pastikan NIM sudah benar atau hubungi admin.</span>
+                        NIM tidak terdaftar.{" "}
+                        <span className="text-[#4A7BA5] block">
+                          Pastikan NIM sudah benar atau hubungi admin.
+                        </span>
                       </p>
                     )}
                   </div>
@@ -1301,17 +1538,19 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
           </div>
-
         ) : (
           /* ========== RESULT VIEW (Multi-scene Interactive Unboxing) ========== */
-          <div ref={resultRef} className="w-full flex flex-col justify-center items-center overflow-visible py-6">
-
+          <div
+            ref={resultRef}
+            className="w-full flex flex-col justify-center items-center overflow-visible py-6"
+          >
             {/* ── Scene 0: Intro Animation ── */}
             {scene === "intro" && (
               <div className="w-full max-w-[400px] text-center space-y-6 py-20 px-6 animate-pulse">
-                <div className="text-[10px] font-black tracking-[0.25em] text-[#B8931F] uppercase font-serif">RUMAH PRESTASI FPMIPA 2026</div>
+                <div className="text-[10px] font-black tracking-[0.25em] text-[#B8931F] uppercase font-serif">
+                  RUMAH PRESTASI FPMIPA 2026
+                </div>
                 <h2 className="text-[#0D2B4E] text-2xl font-black font-serif leading-relaxed">
                   Ada pesan penting <br /> untukmu...
                 </h2>
@@ -1326,8 +1565,13 @@ export default function Home() {
               <div className="w-full max-w-[400px] text-center space-y-6 flex flex-col items-center">
                 <div className="space-y-2">
                   <div className="badge-rp mx-auto">RUMAH PRESTASI</div>
-                  <h2 className="text-xl font-bold text-[#0D2B4E] font-serif">Amplop Hasil Seleksi</h2>
-                  <p className="text-xs text-[#4A7BA5] leading-relaxed">Klik amplop segel di bawah ini untuk membuka pesan kelulusan Anda</p>
+                  <h2 className="text-xl font-bold text-[#0D2B4E] font-serif">
+                    Amplop Hasil Seleksi
+                  </h2>
+                  <p className="text-xs text-[#4A7BA5] leading-relaxed">
+                    Klik amplop segel di bawah ini untuk membuka pesan kelulusan
+                    Anda
+                  </p>
                 </div>
 
                 <div className="envelope-container py-8">
@@ -1351,7 +1595,9 @@ export default function Home() {
 
                     {/* Paper preview slide out */}
                     <div className="envelope-paper-preview absolute bottom-4 left-4 right-4 h-24 bg-[#FCFAF2] rounded-lg shadow-inner z-2 p-4 flex flex-col justify-center items-center pointer-events-none transform translate-y-0">
-                      <span className="text-[9px] font-bold text-[#1B5E9E] tracking-wider uppercase mb-1">SURAT KEPUTUSAN</span>
+                      <span className="text-[9px] font-bold text-[#1B5E9E] tracking-wider uppercase mb-1">
+                        SURAT KEPUTUSAN
+                      </span>
                       <div className="w-20 h-0.5 bg-[#EDDCC9]" />
                     </div>
 
@@ -1372,7 +1618,6 @@ export default function Home() {
             {/* ── Scene 2: Flowblox Curved Stitched Card Perspective Deck ── */}
             {scene === "letters" && (
               <div className="w-full max-w-[800px] flex flex-col items-center gap-8 py-8 overflow-visible">
-
                 {/* 3D Arc Card Deck */}
                 <div className="relative w-full h-[450px] flex items-center justify-center perspective-[1200px] overflow-visible mb-6">
                   {[0, 1].map((idx) => {
@@ -1381,7 +1626,9 @@ export default function Home() {
                       <div
                         key={idx}
                         style={cardStyle}
-                        onClick={() => { if (idx !== activeLetter) setActiveLetter(idx); }}
+                        onClick={() => {
+                          if (idx !== activeLetter) setActiveLetter(idx);
+                        }}
                         className="absolute w-[310px] sm:w-[360px] min-h-[400px] transition-all duration-700 ease-out-back cursor-pointer select-none origin-center"
                       >
                         {idx === 0 && (
@@ -1393,7 +1640,9 @@ export default function Home() {
                             {/* Apple 1 */}
                             <div className="absolute top-6 right-8 w-14 h-14 bg-[#C36B62] rounded-full border border-dashed border-white flex items-center justify-center shadow-md transform rotate-12 z-10 animate-floatGentle">
                               <div className="w-9 h-9 bg-[#FCFAF2] rounded-full border border-dashed border-[#8B7E66]/40 flex items-center justify-center">
-                                <span className="text-[5px] text-[#8B7E66] font-bold">● ●</span>
+                                <span className="text-[5px] text-[#8B7E66] font-bold">
+                                  ● ●
+                                </span>
                               </div>
                               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-1.5 h-4 bg-[#8B7E66] rounded-sm origin-bottom transform -rotate-12" />
                             </div>
@@ -1401,14 +1650,18 @@ export default function Home() {
                             {/* Apple 2 */}
                             <div className="absolute top-24 right-5 w-10 h-10 bg-[#C36B62] rounded-full border border-dashed border-white flex items-center justify-center shadow-md transform -rotate-12 z-10 animate-floatGentle-2">
                               <div className="w-6 h-6 bg-[#FCFAF2] rounded-full border border-dashed border-[#8B7E66]/40 flex items-center justify-center">
-                                <span className="text-[4px] text-[#8B7E66] font-bold">● ●</span>
+                                <span className="text-[4px] text-[#8B7E66] font-bold">
+                                  ● ●
+                                </span>
                               </div>
                               <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-1 h-3 bg-[#8B7E66] rounded-sm origin-bottom" />
                             </div>
 
                             {/* Stitched Star bottom left */}
                             <div className="absolute bottom-8 left-8 sf-stitched-star transform -rotate-12 shadow-sm animate-pulse">
-                              <span className="text-white text-[10px] font-bold">✩</span>
+                              <span className="text-white text-[10px] font-bold">
+                                ✩
+                              </span>
                             </div>
 
                             <div className="space-y-4 pt-2 text-left">
@@ -1417,8 +1670,13 @@ export default function Home() {
                               </div>
 
                               <div className="space-y-1">
-                                <span className="sf-card-line text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase block">KEPUTUSAN</span>
-                                <h1 ref={headingUnderlineRef} className="sf-card-line text-3xl font-semibold text-[#5B6B54] tracking-tight leading-[1.1] font-serif animated-underline">
+                                <span className="sf-card-line text-[9px] font-bold tracking-widest text-[#B8A88A] uppercase block">
+                                  KEPUTUSAN
+                                </span>
+                                <h1
+                                  ref={headingUnderlineRef}
+                                  className="sf-card-line text-3xl font-semibold text-[#5B6B54] tracking-tight leading-[1.1] font-serif animated-underline"
+                                >
                                   CONGRATS.
                                 </h1>
                               </div>
@@ -1428,7 +1686,14 @@ export default function Home() {
                                 <p className="text-sm font-bold text-[#C36B62] border-y border-dashed border-[#B8A88A] py-2 my-1 tracking-wide font-sans text-center bg-[#EDF6FC]/30 rounded-lg gradient-text">
                                   ✦ {applicant.nama} ✦
                                 </p>
-                                <p>dinyatakan <strong className="text-[#5B6B54] font-black">LOLOS SELEKSI</strong> dan diterima sebagai anggota baru Rumah Prestasi FPMIPA 2026!</p>
+                                <p>
+                                  dinyatakan{" "}
+                                  <strong className="text-[#5B6B54] font-black">
+                                    LOLOS SELEKSI
+                                  </strong>{" "}
+                                  dan diterima sebagai anggota baru Rumah
+                                  Prestasi FPMIPA 2026!
+                                </p>
                               </div>
                             </div>
 
@@ -1446,7 +1711,11 @@ export default function Home() {
 
                             {/* Decorative star top right */}
                             <div className="absolute top-6 right-8 sf-stitched-star transform rotate-12 shadow-sm animate-pulse bg-amber-500 border-amber-300 flex items-center justify-center">
-                              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <svg
+                                className="w-4 h-4 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
                                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                               </svg>
                             </div>
@@ -1461,12 +1730,29 @@ export default function Home() {
 
                             <div className="space-y-4 text-left">
                               <div className="space-y-1 pb-3 border-b border-[#B8A88A]/30 mt-2">
-                                <span className="sf-card-line text-[9px] font-bold text-[#B8A88A] tracking-widest uppercase block">UNDANGAN RESMI</span>
+                                <span className="sf-card-line text-[9px] font-bold text-[#B8A88A] tracking-widest uppercase block">
+                                  UNDANGAN RESMI
+                                </span>
                                 <h3 className="sf-card-line text-xl font-black text-[#5B6B54] font-serif flex items-center gap-2.5">
                                   <span className="p-1.5 bg-[#5B6B54]/10 text-[#5B6B54] rounded-lg shrink-0">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    <svg
+                                      className="w-5 h-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5z"
+                                      />
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                                      />
                                     </svg>
                                   </span>
                                   Informasi Pelantikan
@@ -1478,38 +1764,83 @@ export default function Home() {
                                 {[
                                   {
                                     icon: (
-                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                      <svg
+                                        className="w-4 h-4 text-[#4A7BA5]"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="2.5"
+                                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                        />
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="2.5"
+                                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                        />
                                       </svg>
                                     ),
                                     label: "Tempat",
-                                    value: "Auditorium Gedung JICA, FPMIPA UPI"
+                                    value: "Auditorium Gedung JICA, FPMIPA UPI",
                                   },
                                   {
                                     icon: (
-                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                      <svg
+                                        className="w-4 h-4 text-[#4A7BA5]"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="2.5"
+                                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                        />
                                       </svg>
                                     ),
                                     label: "Waktu & Tanggal",
-                                    value: "13.30 WIB, 5 Juni 2025"
+                                    value: "13.30 WIB, 5 Juni 2025",
                                   },
                                   {
                                     icon: (
-                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                      <svg
+                                        className="w-4 h-4 text-[#4A7BA5]"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="2.5"
+                                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                        />
                                       </svg>
                                     ),
                                     label: "Dresscode",
-                                    value: "Jas Almamater UPI, bawahnya bebas formal"
+                                    value:
+                                      "Jas Almamater UPI, bawahnya bebas formal",
                                   },
                                 ].map((item, i) => (
-                                  <div key={i} className="flex items-start gap-3 bg-[#EDF6FC]/30 rounded-xl px-3.5 py-2.5 border border-[#C2DFF0]/40">
-                                    <span className="shrink-0 mt-1">{item.icon}</span>
+                                  <div
+                                    key={i}
+                                    className="flex items-start gap-3 bg-[#EDF6FC]/30 rounded-xl px-3.5 py-2.5 border border-[#C2DFF0]/40"
+                                  >
+                                    <span className="shrink-0 mt-1">
+                                      {item.icon}
+                                    </span>
                                     <div>
-                                      <span className="text-[8px] font-black text-[#B8A88A] tracking-wider uppercase block">{item.label}</span>
-                                      <span className="text-[12px] font-bold text-[#0D2B4E] font-sans">{item.value}</span>
+                                      <span className="text-[8px] font-black text-[#B8A88A] tracking-wider uppercase block">
+                                        {item.label}
+                                      </span>
+                                      <span className="text-[12px] font-bold text-[#0D2B4E] font-sans">
+                                        {item.value}
+                                      </span>
                                     </div>
                                   </div>
                                 ))}
@@ -1518,28 +1849,70 @@ export default function Home() {
                               {/* Info selanjutnya */}
                               <div className="sf-card-line bg-[#FFFBEB]/60 border border-dashed border-[#D4A828]/40 rounded-xl px-4 py-3 space-y-2">
                                 <span className="text-[8px] font-black text-[#B8931F] tracking-wider uppercase flex items-center gap-1.5">
-                                  <svg className="w-3.5 h-3.5 text-[#B8931F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  <svg
+                                    className="w-3.5 h-3.5 text-[#B8931F] shrink-0"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2"
+                                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
                                   </svg>
                                   Informasi Selanjutnya
                                 </span>
                                 <p className="text-[11px] text-[#5C5549] leading-relaxed font-sans">
-                                  Pantau terus update pelantikan dan informasi lanjutan di:
+                                  Pantau terus update pelantikan dan informasi
+                                  lanjutan di:
                                 </p>
                                 <div className="space-y-1.5">
                                   <div className="flex items-center gap-2">
-                                    <svg className="w-3.5 h-3.5 text-[#128C7E] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                                      <path d="M17.472 14.382c-.022-.08-.124-.184-.245-.244-.12-.06-1.124-.555-1.282-.615-.157-.06-.271-.09-.386.09-.115.18-.444.555-.544.675-.1.12-.2.135-.38.075-.18-.06-.752-.277-1.433-.888-.53-.475-.888-1.062-.992-1.242-.104-.18-.011-.277.079-.366.08-.08.18-.21.27-.315.09-.105.12-.18.18-.3.06-.12.03-.225-.015-.315-.045-.09-.386-1.124-.528-1.468-.143-.344-.286-.297-.393-.303l-.333-.006c-.115 0-.303.045-.461.225-.158.18-.6.585-.6 1.425 0 .84.615 1.65.698 1.77.083.12 1.213 1.854 2.94 2.602.41.177.73.282.98.36.413.13.788.113 1.085.067.33-.05 1.124-.46 1.282-.905.158-.445.158-.825.11-1.005zM12 2C6.477 2 2 6.477 2 12c0 1.91.536 3.693 1.468 5.228L2 22l4.908-1.39C8.36 21.433 10.113 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.636 0-3.17-.463-4.48-1.266l-.322-.198-2.928.83.843-2.836-.217-.348C4.1 14.86 3.6 13.483 3.6 12c0-4.63 3.77-8.4 8.4-8.4s8.4 3.77 8.4 8.4-3.77 8.4-8.4 8.4z"/>
+                                    <svg
+                                      className="w-3.5 h-3.5 text-[#128C7E] shrink-0"
+                                      fill="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path d="M17.472 14.382c-.022-.08-.124-.184-.245-.244-.12-.06-1.124-.555-1.282-.615-.157-.06-.271-.09-.386.09-.115.18-.444.555-.544.675-.1.12-.2.135-.38.075-.18-.06-.752-.277-1.433-.888-.53-.475-.888-1.062-.992-1.242-.104-.18-.011-.277.079-.366.08-.08.18-.21.27-.315.09-.105.12-.18.18-.3.06-.12.03-.225-.015-.315-.045-.09-.386-1.124-.528-1.468-.143-.344-.286-.297-.393-.303l-.333-.006c-.115 0-.303.045-.461.225-.158.18-.6.585-.6 1.425 0 .84.615 1.65.698 1.77.083.12 1.213 1.854 2.94 2.602.41.177.73.282.98.36.413.13.788.113 1.085.067.33-.05 1.124-.46 1.282-.905.158-.445.158-.825.11-1.005zM12 2C6.477 2 2 6.477 2 12c0 1.91.536 3.693 1.468 5.228L2 22l4.908-1.39C8.36 21.433 10.113 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.636 0-3.17-.463-4.48-1.266l-.322-.198-2.928.83.843-2.836-.217-.348C4.1 14.86 3.6 13.483 3.6 12c0-4.63 3.77-8.4 8.4-8.4s8.4 3.77 8.4 8.4-3.77 8.4-8.4 8.4z" />
                                     </svg>
-                                    <span className="text-[11px] font-bold text-[#128C7E]">Grup WhatsApp Staf Resmi</span>
+                                    <span className="text-[11px] font-bold text-[#128C7E]">
+                                      Grup WhatsApp Staf Resmi
+                                    </span>
                                   </div>
                                   <div className="flex items-center gap-2">
-                                    <svg className="w-3.5 h-3.5 text-[#C36B62] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2"/>
-                                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2"/>
-                                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round"/>
+                                    <svg
+                                      className="w-3.5 h-3.5 text-[#C36B62] shrink-0"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <rect
+                                        x="2"
+                                        y="2"
+                                        width="20"
+                                        height="20"
+                                        rx="5"
+                                        ry="5"
+                                        strokeWidth="2"
+                                      />
+                                      <path
+                                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                        strokeWidth="2"
+                                      />
+                                      <line
+                                        x1="17.5"
+                                        y1="6.5"
+                                        x2="17.51"
+                                        y2="6.5"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                      />
                                     </svg>
-                                    <span className="text-[11px] font-bold text-[#C36B62]">@rumahprestasi.fpmipa</span>
+                                    <span className="text-[11px] font-bold text-[#C36B62]">
+                                      @rumahprestasi.fpmipa
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -1566,23 +1939,32 @@ export default function Home() {
                 <div className="flex justify-between items-center w-full max-w-[480px] px-4 py-1 z-10 font-sans">
                   <button
                     disabled={activeLetter === 0}
-                    onClick={() => { setActiveLetter(prev => prev - 1); playSFX("whoosh"); }}
+                    onClick={() => {
+                      setActiveLetter((prev) => prev - 1);
+                      playSFX("whoosh");
+                    }}
                     className="btn-light text-[11px] px-3.5 py-1.5 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed shrink-0 cursor-pointer"
                   >
                     ← Kembali
                   </button>
                   <div className="progress flex justify-center gap-1.5 shrink-0 mx-2">
-                    {[0, 1].map(dot => (
+                    {[0, 1].map((dot) => (
                       <span
                         key={dot}
-                        onClick={() => { setActiveLetter(dot); playSFX("whoosh"); }}
+                        onClick={() => {
+                          setActiveLetter(dot);
+                          playSFX("whoosh");
+                        }}
                         className={`dot w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${activeLetter === dot ? "bg-[#5B6B54] scale-125 px-2" : "bg-[#B8A88A]/40"}`}
                       />
                     ))}
                   </div>
                   <button
                     disabled={activeLetter === 1}
-                    onClick={() => { setActiveLetter(prev => prev + 1); playSFX("whoosh"); }}
+                    onClick={() => {
+                      setActiveLetter((prev) => prev + 1);
+                      playSFX("whoosh");
+                    }}
                     className="btn-light text-[11px] px-3.5 py-1.5 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed shrink-0 cursor-pointer"
                   >
                     Lanjut →
@@ -1597,42 +1979,62 @@ export default function Home() {
                 onClick={handlePageClick}
                 className="w-full max-w-[420px] text-center space-y-6 relative z-10 py-4 flex flex-col items-center select-none"
               >
-
                 {/* Overlay canvas */}
-                <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-50 w-full h-full" />
+                <canvas
+                  ref={canvasRef}
+                  className="pointer-events-none fixed inset-0 z-50 w-full h-full"
+                />
                 <div className="badge-rp bg-[#C36B62]/10 text-[#C36B62] border-[#C36B62]/20 mx-auto font-sans">
                   Selamat Bergabung!
                 </div>
 
                 {/* Sparkle container */}
-                <div ref={sparkleContainerRef} className="absolute inset-0 overflow-hidden pointer-events-none" />
+                <div
+                  ref={sparkleContainerRef}
+                  className="absolute inset-0 overflow-hidden pointer-events-none"
+                />
 
                 <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-none font-serif welcome-title">
                   WELCOME
                 </h1>
 
-                <p ref={nameRef} className="text-xs sm:text-sm text-[#5C5549] font-medium max-w-xs mx-auto leading-relaxed font-serif">
+                <p
+                  ref={nameRef}
+                  className="text-xs sm:text-sm text-[#5C5549] font-medium max-w-xs mx-auto leading-relaxed font-serif"
+                >
                   Kamu resmi bergabung di keluarga besar <br />
-                  <strong className="text-[#C36B62]">Rumah Prestasi FPMIPA 2026</strong> <br />
-                  <span className="text-[11px] font-extrabold text-[#5B6B54] tracking-wider block mt-2 font-sans">#JuaranyaFPMIPA</span>
+                  <strong className="text-[#C36B62]">
+                    Rumah Prestasi FPMIPA 2026
+                  </strong>{" "}
+                  <br />
+                  <span className="text-[11px] font-extrabold text-[#5B6B54] tracking-wider block mt-2 font-sans">
+                    #JuaranyaFPMIPA
+                  </span>
                 </p>
 
                 {/* Final data receipt with Sarah Ferguson Stitches */}
                 <div className="sf-card p-6 text-left border border-[#E8D48B]/50 shadow-md w-full relative bg-linen-ivory">
                   <div className="sf-stitched-border" />
-                  <h4 className="text-[10px] font-black text-[#B8A88A] tracking-widest uppercase mb-3.5 text-center border-b pb-2 font-sans">DATA PENGURUS BARU</h4>
+                  <h4 className="text-[10px] font-black text-[#B8A88A] tracking-widest uppercase mb-3.5 text-center border-b pb-2 font-sans">
+                    DATA PENGURUS BARU
+                  </h4>
                   <div className="space-y-2.5 font-sans">
                     <div className="flex justify-between text-xs py-1 border-b border-[#EDF6FC]/50">
-                      <span className="font-bold text-[#8AACCC]">NAMA LENGKAP:</span>
-                      <span className="font-bold text-[#0D2B4E]">{applicant.nama}</span>
+                      <span className="font-bold text-[#8AACCC]">
+                        NAMA LENGKAP:
+                      </span>
+                      <span className="font-bold text-[#0D2B4E]">
+                        {applicant.nama}
+                      </span>
                     </div>
                     <div className="flex justify-between text-xs py-1">
                       <span className="font-bold text-[#8AACCC]">NIM:</span>
-                      <span className="font-bold text-[#2D4A6A]">{applicant.nim}</span>
+                      <span className="font-bold text-[#2D4A6A]">
+                        {applicant.nim}
+                      </span>
                     </div>
                   </div>
                 </div>
-
 
                 <div className="pt-4 flex flex-col gap-2.5 w-full font-sans">
                   <button
@@ -1649,7 +2051,6 @@ export default function Home() {
                 </div>
               </div>
             )}
-
           </div>
         )}
       </main>
@@ -1682,14 +2083,20 @@ export default function Home() {
                   {selectedDept.fullName}
                 </h2>
                 <p className="text-xs text-[#4A7BA5] italic font-medium leading-relaxed mt-1">
-                  &ldquo;{LANDING_DEPARTMENTS.find(d => getDeptId(d.title) === selectedDept.id)?.tagline || "Bergerak Berdampak"}&rdquo;
+                  &ldquo;
+                  {LANDING_DEPARTMENTS.find(
+                    (d) => getDeptId(d.title) === selectedDept.id,
+                  )?.tagline || "Bergerak Berdampak"}
+                  &rdquo;
                 </p>
               </div>
 
               {/* Main Description */}
               <div className="bg-[#EDF6FC]/20 border border-[#C2DFF0]/30 rounded-xl p-4 shadow-inner">
                 <p className="text-[12px] sm:text-xs text-[#5C5549] leading-relaxed font-sans font-medium">
-                  {LANDING_DEPARTMENTS.find(d => getDeptId(d.title) === selectedDept.id)?.desc || selectedDept.message}
+                  {LANDING_DEPARTMENTS.find(
+                    (d) => getDeptId(d.title) === selectedDept.id,
+                  )?.desc || selectedDept.message}
                 </p>
               </div>
 
@@ -1702,10 +2109,16 @@ export default function Home() {
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
                     {selectedDept.leaders.map((leader, lIdx) => {
-                      const rotation = lIdx === 0 ? "rotate-[-3deg]" : "rotate-[3deg]";
+                      const rotation =
+                        lIdx === 0 ? "rotate-[-3deg]" : "rotate-[3deg]";
                       return (
-                        <div key={lIdx} className="flex flex-col items-center gap-3">
-                          <div className={`relative w-36 h-36 sm:w-44 sm:h-44 ${rotation} shadow-md border border-[#8B7E66]/40 p-1.5 bg-white rounded-sm transition-transform duration-300 hover:rotate-0 hover:scale-105`}>
+                        <div
+                          key={lIdx}
+                          className="flex flex-col items-center gap-3"
+                        >
+                          <div
+                            className={`relative w-36 h-36 sm:w-44 sm:h-44 ${rotation} shadow-md border border-[#8B7E66]/40 p-1.5 bg-white rounded-sm transition-transform duration-300 hover:rotate-0 hover:scale-105`}
+                          >
                             <div className="absolute top-[-7px] left-[35%] w-6 h-3 bg-[#8B7E66]/15 backdrop-blur-[1px] border-x border-[#8B7E66]/20 rotate-[10deg] shadow-[0_1px_2px_rgba(0,0,0,0.05)] pointer-events-none" />
                             <img
                               src={leader.photo}
@@ -1727,11 +2140,12 @@ export default function Home() {
                   </div>
 
                   {/* General Greeting */}
-                  {selectedDept.message && selectedDept.message !== "kata kata belum ada" && (
-                    <div className="bg-[#FCFAF2] border-l-4 border-[#5B6B54] p-3.5 rounded-r-xl shadow-sm italic text-xs text-[#5C5549] leading-relaxed whitespace-pre-line font-serif">
-                      &ldquo;{selectedDept.message}&rdquo;
-                    </div>
-                  )}
+                  {selectedDept.message &&
+                    selectedDept.message !== "kata kata belum ada" && (
+                      <div className="bg-[#FCFAF2] border-l-4 border-[#5B6B54] p-3.5 rounded-r-xl shadow-sm italic text-xs text-[#5C5549] leading-relaxed whitespace-pre-line font-serif">
+                        &ldquo;{selectedDept.message}&rdquo;
+                      </div>
+                    )}
                 </div>
               )}
 
@@ -1761,7 +2175,8 @@ export default function Home() {
                             {selectedDept.leaders[0].role}
                           </p>
                         </div>
-                        {selectedDept.message && selectedDept.message !== "kata kata belum ada" ? (
+                        {selectedDept.message &&
+                        selectedDept.message !== "kata kata belum ada" ? (
                           <div className="max-h-[80px] sm:max-h-[95px] overflow-y-auto pr-1.5 scrollbar-thin">
                             <p className="text-[11px] text-[#5C5549] leading-relaxed italic font-serif whitespace-pre-line">
                               &ldquo;{selectedDept.message}&rdquo;
@@ -1770,7 +2185,9 @@ export default function Home() {
                         ) : (
                           <div className="max-h-[80px] sm:max-h-[95px] overflow-y-auto pr-1.5">
                             <p className="text-[11px] text-[#8AACCC] italic font-serif">
-                              &ldquo;Selamat berproses di departemen kami. Bersama-sama, mari kita kembangkan minat bakat dan ukir sejarah prestasi!&rdquo;
+                              &ldquo;Selamat berproses di departemen kami.
+                              Bersama-sama, mari kita kembangkan minat bakat dan
+                              ukir sejarah prestasi!&rdquo;
                             </p>
                           </div>
                         )}
@@ -1785,13 +2202,22 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {selectedDept.leaders.slice(1).map((kadiv, kIdx) => {
-                        const rotation = kIdx === 0 ? "rotate-[-1.5deg]" : "rotate-[1.5deg]";
+                        const rotation =
+                          kIdx === 0 ? "rotate-[-1.5deg]" : "rotate-[1.5deg]";
                         const divName = kadiv.role.replace("Kadiv", "Divisi");
-                        const compDesc = getDivisionCompetitions(selectedDept.id, kadiv.role);
+                        const compDesc = getDivisionCompetitions(
+                          selectedDept.id,
+                          kadiv.role,
+                        );
                         return (
-                          <div key={kIdx} className="bg-white/60 hover:bg-white/80 p-4 border border-[#8B7E66]/20 rounded-xl flex flex-col justify-between shadow-sm transition-all duration-300">
+                          <div
+                            key={kIdx}
+                            className="bg-white/60 hover:bg-white/80 p-4 border border-[#8B7E66]/20 rounded-xl flex flex-col justify-between shadow-sm transition-all duration-300"
+                          >
                             <div className="flex items-center gap-3">
-                              <div className={`relative w-24 h-24 sm:w-28 sm:h-28 ${rotation} shadow-sm border border-[#8B7E66]/30 p-0.5 bg-white rounded-sm shrink-0`}>
+                              <div
+                                className={`relative w-24 h-24 sm:w-28 sm:h-28 ${rotation} shadow-sm border border-[#8B7E66]/30 p-0.5 bg-white rounded-sm shrink-0`}
+                              >
                                 <img
                                   src={kadiv.photo}
                                   alt={kadiv.name}
@@ -1837,8 +2263,14 @@ export default function Home() {
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="flex justify-center gap-3 font-sans">
             {[
-              { handle: "@rumahprestasi.fpmipa", href: "https://www.instagram.com/rumahprestasi.fpmipa" },
-              { handle: "@fpmipaupiofficial", href: "https://www.instagram.com/fpmipaupiofficial" },
+              {
+                handle: "@rumahprestasi.fpmipa",
+                href: "https://www.instagram.com/rumahprestasi.fpmipa",
+              },
+              {
+                handle: "@fpmipaupiofficial",
+                href: "https://www.instagram.com/fpmipaupiofficial",
+              },
             ].map(({ handle, href }) => (
               <a
                 key={handle}
@@ -1847,7 +2279,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-light flex items-center gap-1.5 rounded-full px-4 py-2 text-[12px]"
               >
-                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                 </svg>
                 {handle}
@@ -1855,8 +2291,12 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center space-y-0.5 font-sans mt-4">
-            <p className="text-[11px] text-[#4A7BA5]">© 2026 Rumah Prestasi FPMIPA UPI</p>
-            <p className="text-[10px] text-[#8AACCC]">Universitas Pendidikan Indonesia · Bandung</p>
+            <p className="text-[11px] text-[#4A7BA5]">
+              © 2026 Rumah Prestasi FPMIPA UPI
+            </p>
+            <p className="text-[10px] text-[#8AACCC]">
+              Universitas Pendidikan Indonesia · Bandung
+            </p>
           </div>
         </div>
       </footer>
