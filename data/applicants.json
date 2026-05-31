@@ -1,225 +1,1009 @@
 [
   {
-    "nim": "2401001",
-    "nama": "Rafi Aldiansyah",
-    "departemen": "Teknologi",
-    "jabatan": "Staf Muda",
-    "divisi": "LIDM"
+    "nim": "2300492",
+    "nama": "Ahmad Izzuddin Azzam",
+    "departemen": "BPH",
+    "jabatan": "Ketua Umum",
+    "divisi": ""
   },
   {
-    "nim": "2401002",
-    "nama": "Sekar Ayu Lestari",
-    "departemen": "Teknologi",
-    "jabatan": "Staf Muda",
-    "divisi": "LIDM"
+    "nim": "2407469",
+    "nama": "Rifa Nur Habibah",
+    "departemen": "BPH",
+    "jabatan": "Sekretaris Umum 1",
+    "divisi": ""
   },
   {
-    "nim": "2401003",
-    "nama": "Muhammad Zaki Fauzan",
-    "departemen": "Teknologi",
-    "jabatan": "Staf Muda",
-    "divisi": "Gemastik"
+    "nim": "2407262",
+    "nama": "Aufa Latifah Tsani",
+    "departemen": "BPH",
+    "jabatan": "Sekretaris Umum 2",
+    "divisi": ""
   },
   {
-    "nim": "2401004",
-    "nama": "Nadira Putri Santoso",
-    "departemen": "Teknologi",
-    "jabatan": "Staf Muda",
-    "divisi": "Gemastik"
+    "nim": "2309244",
+    "nama": "Siti Almaidah",
+    "departemen": "BPH",
+    "jabatan": "Bendahara Umum 1",
+    "divisi": ""
   },
   {
-    "nim": "2402001",
-    "nama": "Farizal Hendra Nugroho",
-    "departemen": "Medinfo",
-    "jabatan": "Staf Muda",
-    "divisi": "Publikasi"
+    "nim": "2405506",
+    "nama": "Virgiani Azali Ishmah",
+    "departemen": "BPH",
+    "jabatan": "Bendahara Umum 2",
+    "divisi": ""
   },
   {
-    "nim": "2402002",
-    "nama": "Citra Dewi Rahayu",
-    "departemen": "Medinfo",
-    "jabatan": "Staf Muda",
-    "divisi": "Publikasi"
+    "nim": "2405572",
+    "nama": "Belva Risma Aydina",
+    "departemen": "PSDT",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
   },
   {
-    "nim": "2402003",
-    "nama": "Rizky Firmansyah",
-    "departemen": "Medinfo",
-    "jabatan": "Staf Muda",
-    "divisi": "Design"
+    "nim": "2405507",
+    "nama": "Zahra Noviandra Savina",
+    "departemen": "PSDT",
+    "jabatan": "Wakil Departemen",
+    "divisi": ""
   },
   {
-    "nim": "2402004",
-    "nama": "Annisa Maulida Zahra",
-    "departemen": "Medinfo",
+    "nim": "2405530",
+    "nama": "Ashbihatun Nurzakiyah",
+    "departemen": "PSDT",
     "jabatan": "Staf Muda",
-    "divisi": "Design"
+    "divisi": ""
   },
   {
-    "nim": "2403001",
-    "nama": "Bintang Dwi Saputra",
+    "nim": "2500323",
+    "nama": "Aulia Zulfa Ramadhani",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2505670",
+    "nama": "Gina Nurul Fauziah",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2505551",
+    "nama": "Helena Anjela Putri",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2400732",
+    "nama": "Jesika Br Sitanggang",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2401992",
+    "nama": "Lida Maulidia",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2406952",
+    "nama": "Lindri Nur'Aulia",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2505642",
+    "nama": "Muhammad Sabil Ibadurrohman",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2510290",
+    "nama": "Rafy Hafis Mubarok",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2509991",
+    "nama": "Reisha Romadhona",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2505560",
+    "nama": "Sulika Putri",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2405297",
+    "nama": "Teresa Wulan Anggraeni",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2406351",
+    "nama": "Tsabita Aqila Reysandi",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2507341",
+    "nama": "Nabila Marotussita",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2405377",
+    "nama": "Nadia Ningsih",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2406959",
+    "nama": "Putri Nurhasanah",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2401508",
+    "nama": "Nailatus Salwah Midiyanti",
+    "departemen": "PSDT",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2300580",
+    "nama": "Filzah Nabila Azri",
+    "departemen": "Riset",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2311096",
+    "nama": "Grace Philia",
+    "departemen": "Riset",
+    "jabatan": "Ketua Divisi",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2404616",
+    "nama": "Siti Fatimah Azahra",
     "departemen": "Riset",
     "jabatan": "Staf Muda",
     "divisi": "PKM"
   },
   {
-    "nim": "2403002",
-    "nama": "Laila Nur Azizah",
+    "nim": "2400791",
+    "nama": "Fira Fauziyah Imtiyaz",
     "departemen": "Riset",
     "jabatan": "Staf Muda",
     "divisi": "PKM"
   },
   {
-    "nim": "2403003",
-    "nama": "Hendra Kurniawan",
+    "nim": "2409750",
+    "nama": "Shofwah Ananda Zulti",
     "departemen": "Riset",
     "jabatan": "Staf Muda",
-    "divisi": "ON-MIPA"
+    "divisi": "PKM"
   },
   {
-    "nim": "2403004",
-    "nama": "Salma Fitria Utami",
+    "nim": "2402392",
+    "nama": "Elsya Ramadhany",
     "departemen": "Riset",
     "jabatan": "Staf Muda",
-    "divisi": "ON-MIPA"
+    "divisi": "PKM"
   },
   {
-    "nim": "2404001",
-    "nama": "Dimas Prasetyo",
+    "nim": "2406501",
+    "nama": "Bunga Syahira Maharani",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2408388",
+    "nama": "Fariza Fadillah Hakim",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2408258",
+    "nama": "Ruwaida Nurrahmah",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2406856",
+    "nama": "Ikrima Zaenab Nur Habshoh",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2503547",
+    "nama": "Nazwa Nurfatonah",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2505568",
+    "nama": "Putri Febriyanti Alifa Syahadah",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2502853",
+    "nama": "Machmudah",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2510833",
+    "nama": "Syaira Saskya",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2409492",
+    "nama": "Kamila Mecca Dewi",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2405499",
+    "nama": "Amanda Syahira Efka Fatikha",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2406014",
+    "nama": "Shafitri Salamah Sya'baniah",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2503074",
+    "nama": "Agung Gunadi",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2507798",
+    "nama": "Irfan Hilmi",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "PKM"
+  },
+  {
+    "nim": "2306863",
+    "nama": "Pascal Muhamad Fauzan",
+    "departemen": "Riset",
+    "jabatan": "Ketua Divisi",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2405591",
+    "nama": "Zalfa Aliyah Yusuf",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2507031",
+    "nama": "Yaseer Alfalah Ahmad",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2505627",
+    "nama": "Moh. Hasby Kurnia Winata",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2508102",
+    "nama": "Feby Herdalia Sunandar",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2504852",
+    "nama": "Elbima Dwiputra Hardy",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2504867",
+    "nama": "Salsabila",
+    "departemen": "Riset",
+    "jabatan": "Staf Muda",
+    "divisi": "ONMIPA"
+  },
+  {
+    "nim": "2300194",
+    "nama": "Bulan Praharsini",
+    "departemen": "Literasi",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2307941",
+    "nama": "Dewi Alya Pramanik",
+    "departemen": "Literasi",
+    "jabatan": "Ketua Divisi",
+    "divisi": "PILMAPRES"
+  },
+  {
+    "nim": "2501539",
+    "nama": "Tasya Alya Kamila",
     "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "Pilmapres"
+    "divisi": "PILMAPRES"
   },
   {
-    "nim": "2404002",
-    "nama": "Nadia Ramadhani",
+    "nim": "2312091",
+    "nama": "Nina Wulandari",
     "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "Pilmapres"
+    "divisi": "PILMAPRES"
   },
   {
-    "nim": "2404003",
-    "nama": "Arif Budiman Santoso",
+    "nim": "2504139",
+    "nama": "Muhamad Rivan Kusuma",
+    "departemen": "Literasi",
+    "jabatan": "Staf Muda",
+    "divisi": "PILMAPRES"
+  },
+  {
+    "nim": "2505594",
+    "nama": "Rakha Putra Pramuditya",
+    "departemen": "Literasi",
+    "jabatan": "Staf Muda",
+    "divisi": "PILMAPRES"
+  },
+  {
+    "nim": "2401659",
+    "nama": "Afni Alya Putri",
+    "departemen": "Literasi",
+    "jabatan": "Staf Muda",
+    "divisi": "PILMAPRES"
+  },
+  {
+    "nim": "2305165",
+    "nama": "Muhammad Alwi Putrasyefik",
+    "departemen": "Literasi",
+    "jabatan": "Ketua Divisi",
+    "divisi": "NUDC KDMI"
+  },
+  {
+    "nim": "2505549",
+    "nama": "Andi Alda",
     "departemen": "Literasi",
     "jabatan": "Staf Muda",
     "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2404004",
-    "nama": "Putri Handayani",
+    "nim": "2405076",
+    "nama": "Muhammad Fadhlan Aprianto",
     "departemen": "Literasi",
     "jabatan": "Staf Muda",
     "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2405001",
-    "nama": "Kevin Ardiansyah",
-    "departemen": "Seni",
+    "nim": "2402209",
+    "nama": "Natasya Septiany",
+    "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "MTQ"
+    "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2405002",
-    "nama": "Zahra Meilani Putri",
-    "departemen": "Seni",
+    "nim": "2507008",
+    "nama": "Nazla Azkiya Zahra",
+    "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "MTQ"
+    "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2405003",
-    "nama": "Bagas Dwi Nugroho",
-    "departemen": "Seni",
+    "nim": "2408235",
+    "nama": "Saqifa Nuraisyi",
+    "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "Seni"
+    "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2405004",
-    "nama": "Rania Syifa Nurfadilah",
-    "departemen": "Seni",
+    "nim": "2505552",
+    "nama": "Zakiya Humauira",
+    "departemen": "Literasi",
     "jabatan": "Staf Muda",
-    "divisi": "Seni"
+    "divisi": "NUDC KDMI"
   },
   {
-    "nim": "2406001",
-    "nama": "Irfan Maulana Hakim",
-    "departemen": "Sertifikasi",
+    "nim": "2402191",
+    "nama": "Puja Dwi Maharani",
+    "departemen": "Literasi",
     "jabatan": "Staf Muda",
+    "divisi": "NUDC KDMI"
+  },
+  {
+    "nim": "2310005",
+    "nama": "Mochammad Zakyudin",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Ketua Departemen",
     "divisi": ""
   },
   {
-    "nim": "2406002",
-    "nama": "Tiara Amelia Safitri",
-    "departemen": "Sertifikasi",
-    "jabatan": "Staf Muda",
-    "divisi": ""
+    "nim": "2309522",
+    "nama": "Irwan Ruswandi",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Ketua Divisi",
+    "divisi": "Inkubator Bisnis"
   },
   {
-    "nim": "2406003",
-    "nama": "Gilang Ramadhan Putra",
-    "departemen": "Sertifikasi",
-    "jabatan": "Staf Muda",
-    "divisi": ""
-  },
-  {
-    "nim": "2406004",
-    "nama": "Isyti Khoirunnisa",
-    "departemen": "Sertifikasi",
-    "jabatan": "Staf Muda",
-    "divisi": ""
-  },
-  {
-    "nim": "2407001",
-    "nama": "Akbar Fadhillah Pratama",
+    "nim": "2521303",
+    "nama": "Nadira Nurdiani",
     "departemen": "Kewirausahaan",
     "jabatan": "Staf Muda",
     "divisi": "Inkubator Bisnis"
   },
   {
-    "nim": "2407002",
-    "nama": "Reina Cantika Dewi",
+    "nim": "2404240",
+    "nama": "Rahmah Afiyah",
     "departemen": "Kewirausahaan",
     "jabatan": "Staf Muda",
     "divisi": "Inkubator Bisnis"
   },
   {
-    "nim": "2407003",
-    "nama": "Wahyu Eko Prasetyo",
+    "nim": "2511392",
+    "nama": "Izzaddin Dharmeswara U.",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "Inkubator Bisnis"
+  },
+  {
+    "nim": "2510502",
+    "nama": "Amelia Ananda Tirtaputri",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "Inkubator Bisnis"
+  },
+  {
+    "nim": "2508933",
+    "nama": "Hannin Hamiidah Nurcahyani",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "Inkubator Bisnis"
+  },
+  {
+    "nim": "2502706",
+    "nama": "Muhammad Ridzi Alqahtani",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "Inkubator Bisnis"
+  },
+  {
+    "nim": "2405613",
+    "nama": "Dianti Azmi Rusydah",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "Inkubator Bisnis"
+  },
+  {
+    "nim": "2405436",
+    "nama": "Kaisya Azzahra",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Ketua Divisi",
+    "divisi": "P2MW"
+  },
+  {
+    "nim": "2505634",
+    "nama": "Muna Fathimatuzzahro",
     "departemen": "Kewirausahaan",
     "jabatan": "Staf Muda",
     "divisi": "P2MW"
   },
   {
-    "nim": "2407004",
-    "nama": "Indira Sari Dewanti",
+    "nim": "2505109",
+    "nama": "Nayla Nabilah",
     "departemen": "Kewirausahaan",
     "jabatan": "Staf Muda",
     "divisi": "P2MW"
   },
   {
-    "nim": "2408001",
-    "nama": "Fauzan Adi Nugroho",
-    "departemen": "PSDT",
+    "nim": "2407015",
+    "nama": "Putri Intan Kania Nosa",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "P2MW"
+  },
+  {
+    "nim": "2407955",
+    "nama": "Natasha Dwi Fitria",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "P2MW"
+  },
+  {
+    "nim": "2403086",
+    "nama": "Shakila Aulia Nurrul Rohman",
+    "departemen": "Kewirausahaan",
+    "jabatan": "Staf Muda",
+    "divisi": "P2MW"
+  },
+  {
+    "nim": "2400494",
+    "nama": "Khairatul Husna Tartila",
+    "departemen": "Teknologi",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "",
+    "nama": "Muhammad Raditya Santosa",
+    "departemen": "Teknologi",
+    "jabatan": "Ketua Divisi",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2505617",
+    "nama": "Muhammad Hasyim Hibban",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2511074",
+    "nama": "Rafli Abadissalam",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2506827",
+    "nama": "Faridchi Trianda Safaraz",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2400598",
+    "nama": "Umarex Shauma Andromeda",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2400456",
+    "nama": "Vivi Agustina Suryana",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2407915",
+    "nama": "Nafis Asyakir Anjar",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2506968",
+    "nama": "Moch Fadillah Pratama",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2404286",
+    "nama": "Daffa Dhiya Candra",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "Gemastik"
+  },
+  {
+    "nim": "2306828",
+    "nama": "Yurislia Hidayanti",
+    "departemen": "Teknologi",
+    "jabatan": "Ketua Divisi",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2504332",
+    "nama": "Arvenda Anggara Putra",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2408508",
+    "nama": "Daneyta Syahla Kusumah",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2502778",
+    "nama": "Putri Alika",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2304794",
+    "nama": "Fajari Arkan Fadhlurrahman",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2406584",
+    "nama": "Aliya Dewi Rahmawati",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2404151",
+    "nama": "Siti Agisna Wahyuni",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2406181",
+    "nama": "Muna Nisa Rabah Fadlullah",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2403652",
+    "nama": "Nayla Sofia",
+    "departemen": "Teknologi",
+    "jabatan": "Staf Muda",
+    "divisi": "LIDM"
+  },
+  {
+    "nim": "2301136",
+    "nama": "Rasyiqa Zata Dini",
+    "departemen": "Medinfo",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2305056",
+    "nama": "Syifa Nur Azizah Suhud",
+    "departemen": "Medinfo",
+    "jabatan": "Ketua Divisi",
+    "divisi": "Publikasi"
+  },
+  {
+    "nim": "2508596",
+    "nama": "Raitsa Zahra Aina",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Publikasi"
+  },
+  {
+    "nim": "2505669",
+    "nama": "Wildan Aziz Nugraha",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Publikasi"
+  },
+  {
+    "nim": "2402024",
+    "nama": "Siti Annazwa Ayu Fauziyah",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Publikasi"
+  },
+  {
+    "nim": "2508890",
+    "nama": "Fatih Al-Ghifari Akbar Hasani",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Publikasi"
+  },
+  {
+    "nim": "2311231",
+    "nama": "Faiz Bayu Erlangga",
+    "departemen": "Medinfo",
+    "jabatan": "Ketua Divisi",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2304637",
+    "nama": "Maliq Muzhafran",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2409617",
+    "nama": "Khaliza Kadina",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2502012",
+    "nama": "Nirmala",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2500130",
+    "nama": "Putra Surya Nanda",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2405451",
+    "nama": "Ditha Okstevia",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2508734",
+    "nama": "Farell Arrefa Zafhir",
+    "departemen": "Medinfo",
+    "jabatan": "Staf Muda",
+    "divisi": "Design"
+  },
+  {
+    "nim": "2410946",
+    "nama": "Naufal Rizki Rabbani",
+    "departemen": "Seni",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2304035",
+    "nama": "Ajeng Tia Vijola",
+    "departemen": "Seni",
+    "jabatan": "Ketua Divisi",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2500919",
+    "nama": "Shofwah Hansifa Sirin",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2505653",
+    "nama": "Candra Aditya",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2510541",
+    "nama": "Fatimah Raras Kusumadewi",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2505099",
+    "nama": "Salwa Atiach",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2307925",
+    "nama": "Dyah Hapsari Widyaningrum",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2409268",
+    "nama": "Lintang Ayudia Nurjati",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2410045",
+    "nama": "Fitri Salma Ramadhani",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2405285",
+    "nama": "Nasywa Putri Azzahra",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2505544",
+    "nama": "Lailatul Rahmi",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2505561",
+    "nama": "Silvi Salwiah",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "Seni"
+  },
+  {
+    "nim": "2505256",
+    "nama": "Mukhammad Wildan Taufiq",
+    "departemen": "Seni",
+    "jabatan": "Ketua Divisi",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2503618",
+    "nama": "Fath Ad Dafi Ali Al Iskandar",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2500491",
+    "nama": "Arif Rahmatullah",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2408352",
+    "nama": "Naura Nur Faizah",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2504624",
+    "nama": "Fitri Rahmadani",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2403245",
+    "nama": "Rizka Aulia",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2504531",
+    "nama": "Faiz Muhammad Ghazali",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2400102",
+    "nama": "Siti Nabila Nur Alika",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2408495",
+    "nama": "Selika Kanajmi",
+    "departemen": "Seni",
+    "jabatan": "Staf Muda",
+    "divisi": "MTQ"
+  },
+  {
+    "nim": "2311544",
+    "nama": "Hurul Aini",
+    "departemen": "Sertifikasi",
+    "jabatan": "Ketua Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2305994",
+    "nama": "Najma Eleanor",
+    "departemen": "Sertifikasi",
+    "jabatan": "Wakil Departemen",
+    "divisi": ""
+  },
+  {
+    "nim": "2303379",
+    "nama": "Milda Nur Risma Abdah",
+    "departemen": "Sertifikasi",
     "jabatan": "Staf Muda",
     "divisi": ""
   },
   {
-    "nim": "2408002",
-    "nama": "Melati Nur Cahyani",
-    "departemen": "PSDT",
+    "nim": "2401504",
+    "nama": "Tyas Setyaningsih",
+    "departemen": "Sertifikasi",
     "jabatan": "Staf Muda",
     "divisi": ""
   },
   {
-    "nim": "2408003",
-    "nama": "Rizal Maulana Ibrahim",
-    "departemen": "PSDT",
+    "nim": "2505615",
+    "nama": "Gisna Rahmawati",
+    "departemen": "Sertifikasi",
     "jabatan": "Staf Muda",
     "divisi": ""
   },
   {
-    "nim": "2408004",
-    "nama": "Sherly Agustina Putri",
-    "departemen": "PSDT",
+    "nim": "2405306",
+    "nama": "Najwa Arifah",
+    "departemen": "Sertifikasi",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2407151",
+    "nama": "Alya Rahma Puteri",
+    "departemen": "Sertifikasi",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2402528",
+    "nama": "Amalia Putri Utami",
+    "departemen": "Sertifikasi",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2505556",
+    "nama": "Asyifa Andam Dewi",
+    "departemen": "Sertifikasi",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2405265",
+    "nama": "Yudhistira Aulia Chandra",
+    "departemen": "Sertifikasi",
+    "jabatan": "Staf Muda",
+    "divisi": ""
+  },
+  {
+    "nim": "2507457",
+    "nama": "Sasrani",
+    "departemen": "Sertifikasi",
     "jabatan": "Staf Muda",
     "divisi": ""
   }
