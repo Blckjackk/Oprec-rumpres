@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import departmentsData from '@/data/departments.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -228,7 +229,7 @@ export default function Home() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [applicantsList, setApplicantsList] = useState<ApplicantData[]>([]);
-  const [departmentsList, setDepartmentsList] = useState<DepartmentData[]>([]);
+  const [departmentsList, setDepartmentsList] = useState<DepartmentData[]>(departmentsData);
   const [dataReady, setDataReady] = useState(false);
 
   // Responsive state and Premium Interactive helpers
@@ -927,7 +928,7 @@ export default function Home() {
       gsap.to(".cloud-c", { y: -8, x: 5, duration: 8, ease: "sine.inOut", yoyo: true, repeat: -1, delay: -4 });
     }, containerRef);
     return () => ctx.revert();
-  }, [applicant, dataReady]);
+  }, [applicant]);
 
   /* ---- GSAP: Result animations ---- */
   useEffect(() => {
