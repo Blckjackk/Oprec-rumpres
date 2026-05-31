@@ -221,7 +221,7 @@ const getDivisionCompetitions = (deptId: string, roleName: string) => {
 export default function Home() {
   const [nim, setNim] = useState("");
   const [applicant, setApplicant] = useState<ApplicantData | null>(null);
-  const [deptInfo, setDeptInfo] = useState<DepartmentData | null>(null);
+
   const [notFound, setNotFound] = useState(false);
   const [selectedDept, setSelectedDept] = useState<DepartmentData | null>(null);
 
@@ -972,19 +972,14 @@ export default function Home() {
         (a) => a.nim === trimmed || a.nim.toLowerCase() === trimmed.toLowerCase()
       );
       if (!found) { setNotFound(true); setIsLoading(false); return; }
-      const foundDept = departmentsList.find(
-        (d) => d.id === found.departemen.toLowerCase() ||
-          d.name.toLowerCase() === found.departemen.toLowerCase()
-      );
       setApplicant(found);
-      setDeptInfo(foundDept ?? null);
       setScene("intro");
       setIsLoading(false);
     }, 800);
   };
 
   const handleLogout = () => {
-    setApplicant(null); setDeptInfo(null);
+    setApplicant(null);
     setNim(""); setNotFound(false); setError("");
     setScene("login"); setActiveLetter(0); setEnvelopeOpen(false);
   };
