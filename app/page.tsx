@@ -365,14 +365,6 @@ export default function Home() {
     }
   };
 
-  // 0D. Prefilled WA coordinator contact redirect URL
-  const getWhatsAppLink = () => {
-    if (!applicant) return "#";
-    const waText = encodeURIComponent(
-      `Halo Kak! Saya *${applicant.nama}* (NIM: *${applicant.nim}*), dinyatakan lolos seleksi dan diterima sebagai *${applicant.jabatan}* di Departemen *${deptInfo?.fullName ?? applicant.departemen}* Rumah Prestasi 2026.\n\nSaya ingin mengonfirmasi kelulusan saya. Terima kasih banyak kak! #JuaranyaFPMIPA`
-    );
-    return `https://wa.me/62895325785002?text=${waText}`;
-  };
 
   // Window Resize & Client detection (prevents hydration mismatch)
   useEffect(() => {
@@ -1309,7 +1301,7 @@ export default function Home() {
                 </form>
 
                 <p className="text-[9px] text-[#B8A88A]/70 text-center mt-5 uppercase tracking-wider font-semibold">
-                  CONFIDENTIAL • RUMAH PRESTASI 2026
+                  CONFIDENTIAL • RUMAH PRESTASI FPMIPA 2026
                 </p>
               </div>
             </div>
@@ -1323,7 +1315,7 @@ export default function Home() {
             {/* ── Scene 0: Intro Animation ── */}
             {scene === "intro" && (
               <div className="w-full max-w-[400px] text-center space-y-6 py-20 px-6 animate-pulse">
-                <div className="text-[10px] font-black tracking-[0.25em] text-[#B8931F] uppercase font-serif">RUMAH PRESTASI 2026</div>
+                <div className="text-[10px] font-black tracking-[0.25em] text-[#B8931F] uppercase font-serif">RUMAH PRESTASI FPMIPA 2026</div>
                 <h2 className="text-[#0D2B4E] text-2xl font-black font-serif leading-relaxed">
                   Ada pesan penting <br /> untukmu...
                 </h2>
@@ -1440,7 +1432,7 @@ export default function Home() {
                                 <p className="text-sm font-bold text-[#C36B62] border-y border-dashed border-[#B8A88A] py-2 my-1 tracking-wide font-sans text-center bg-[#EDF6FC]/30 rounded-lg gradient-text">
                                   ✦ {applicant.nama} ✦
                                 </p>
-                                <p>dinyatakan <strong className="text-[#5B6B54] font-black">LOLOS SELEKSI</strong> dan diterima sebagai anggota baru Rumah Prestasi 2026!</p>
+                                <p>dinyatakan <strong className="text-[#5B6B54] font-black">LOLOS SELEKSI</strong> dan diterima sebagai anggota baru Rumah Prestasi FPMIPA 2026!</p>
                               </div>
                             </div>
 
@@ -1474,20 +1466,51 @@ export default function Home() {
                             <div className="space-y-4 text-left">
                               <div className="space-y-1 pb-3 border-b border-[#B8A88A]/30 mt-2">
                                 <span className="sf-card-line text-[9px] font-bold text-[#B8A88A] tracking-widest uppercase block">UNDANGAN RESMI</span>
-                                <h3 className="sf-card-line text-xl font-black text-[#5B6B54] font-serif flex items-center gap-2">
-                                  🎓 Informasi Pelantikan
+                                <h3 className="sf-card-line text-xl font-black text-[#5B6B54] font-serif flex items-center gap-2.5">
+                                  <span className="p-1.5 bg-[#5B6B54]/10 text-[#5B6B54] rounded-lg shrink-0">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    </svg>
+                                  </span>
+                                  Informasi Pelantikan
                                 </h3>
                               </div>
 
                               {/* Pelantikan Details */}
                               <div className="space-y-3 sf-card-line">
                                 {[
-                                  { icon: "📍", label: "Tempat", value: "Aula FPMIPA UPI, Bandung" },
-                                  { icon: "📅", label: "Tanggal", value: "1 Juni 2026" },
-                                  { icon: "👔", label: "Dresscode", value: "Pakaian Formal Hitam" },
+                                  {
+                                    icon: (
+                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                      </svg>
+                                    ),
+                                    label: "Tempat",
+                                    value: "Auditorium Gedung JICA, FPMIPA UPI"
+                                  },
+                                  {
+                                    icon: (
+                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                      </svg>
+                                    ),
+                                    label: "Waktu & Tanggal",
+                                    value: "13.30 WIB, 5 Juni 2025"
+                                  },
+                                  {
+                                    icon: (
+                                      <svg className="w-4 h-4 text-[#4A7BA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                      </svg>
+                                    ),
+                                    label: "Dresscode",
+                                    value: "Jas Almamater UPI, bawahnya bebas formal"
+                                  },
                                 ].map((item, i) => (
                                   <div key={i} className="flex items-start gap-3 bg-[#EDF6FC]/30 rounded-xl px-3.5 py-2.5 border border-[#C2DFF0]/40">
-                                    <span className="text-lg shrink-0 mt-0.5">{item.icon}</span>
+                                    <span className="shrink-0 mt-1">{item.icon}</span>
                                     <div>
                                       <span className="text-[8px] font-black text-[#B8A88A] tracking-wider uppercase block">{item.label}</span>
                                       <span className="text-[12px] font-bold text-[#0D2B4E] font-sans">{item.value}</span>
@@ -1498,17 +1521,28 @@ export default function Home() {
 
                               {/* Info selanjutnya */}
                               <div className="sf-card-line bg-[#FFFBEB]/60 border border-dashed border-[#D4A828]/40 rounded-xl px-4 py-3 space-y-2">
-                                <span className="text-[8px] font-black text-[#B8931F] tracking-wider uppercase block">ℹ️ Informasi Selanjutnya</span>
+                                <span className="text-[8px] font-black text-[#B8931F] tracking-wider uppercase flex items-center gap-1.5">
+                                  <svg className="w-3.5 h-3.5 text-[#B8931F] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                                  Informasi Selanjutnya
+                                </span>
                                 <p className="text-[11px] text-[#5C5549] leading-relaxed font-sans">
                                   Pantau terus update pelantikan dan informasi lanjutan di:
                                 </p>
                                 <div className="space-y-1.5">
                                   <div className="flex items-center gap-2">
-                                    <span className="text-sm">💬</span>
+                                    <svg className="w-3.5 h-3.5 text-[#128C7E] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M17.472 14.382c-.022-.08-.124-.184-.245-.244-.12-.06-1.124-.555-1.282-.615-.157-.06-.271-.09-.386.09-.115.18-.444.555-.544.675-.1.12-.2.135-.38.075-.18-.06-.752-.277-1.433-.888-.53-.475-.888-1.062-.992-1.242-.104-.18-.011-.277.079-.366.08-.08.18-.21.27-.315.09-.105.12-.18.18-.3.06-.12.03-.225-.015-.315-.045-.09-.386-1.124-.528-1.468-.143-.344-.286-.297-.393-.303l-.333-.006c-.115 0-.303.045-.461.225-.158.18-.6.585-.6 1.425 0 .84.615 1.65.698 1.77.083.12 1.213 1.854 2.94 2.602.41.177.73.282.98.36.413.13.788.113 1.085.067.33-.05 1.124-.46 1.282-.905.158-.445.158-.825.11-1.005zM12 2C6.477 2 2 6.477 2 12c0 1.91.536 3.693 1.468 5.228L2 22l4.908-1.39C8.36 21.433 10.113 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.636 0-3.17-.463-4.48-1.266l-.322-.198-2.928.83.843-2.836-.217-.348C4.1 14.86 3.6 13.483 3.6 12c0-4.63 3.77-8.4 8.4-8.4s8.4 3.77 8.4 8.4-3.77 8.4-8.4 8.4z"/>
+                                    </svg>
                                     <span className="text-[11px] font-bold text-[#128C7E]">Grup WhatsApp Staf Resmi</span>
                                   </div>
                                   <div className="flex items-center gap-2">
-                                    <span className="text-sm">📸</span>
+                                    <svg className="w-3.5 h-3.5 text-[#C36B62] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2"/>
+                                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2"/>
+                                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round"/>
+                                    </svg>
                                     <span className="text-[11px] font-bold text-[#C36B62]">@rumahprestasi.fpmipa</span>
                                   </div>
                                 </div>
@@ -1522,7 +1556,7 @@ export default function Home() {
                                 onMouseLeave={handleMagneticLeave}
                                 className="w-full btn-rp py-3.5 rounded-xl text-sm bg-gradient-to-r from-[#5B6B54] to-[#8B7E66] border border-[#B8A88A]/20 shimmer-gold cursor-pointer"
                               >
-                                Rayakan Kelulusanmu! 🎉
+                                Rayakan Kelulusanmu!
                               </button>
                             </div>
                           </div>
@@ -1583,7 +1617,7 @@ export default function Home() {
 
                 <p ref={nameRef} className="text-xs sm:text-sm text-[#5C5549] font-medium max-w-xs mx-auto leading-relaxed font-serif">
                   Kamu resmi bergabung di keluarga besar <br />
-                  <strong className="text-[#C36B62]">Rumah Prestasi 2026</strong> <br />
+                  <strong className="text-[#C36B62]">Rumah Prestasi FPMIPA 2026</strong> <br />
                   <span className="text-[11px] font-extrabold text-[#5B6B54] tracking-wider block mt-2 font-sans">#JuaranyaFPMIPA</span>
                 </p>
 
@@ -1596,14 +1630,9 @@ export default function Home() {
                       <span className="font-bold text-[#8AACCC]">NAMA LENGKAP:</span>
                       <span className="font-bold text-[#0D2B4E]">{applicant.nama}</span>
                     </div>
-                    <div className="flex justify-between text-xs py-1 border-b border-[#EDF6FC]/50">
+                    <div className="flex justify-between text-xs py-1">
                       <span className="font-bold text-[#8AACCC]">NIM:</span>
                       <span className="font-bold text-[#2D4A6A]">{applicant.nim}</span>
-                    </div>
-
-                    <div className="flex justify-between text-xs py-1">
-                      <span className="font-bold text-[#8AACCC]">JABATAN:</span>
-                      <span className="font-bold text-[#B8931F]">{applicant.jabatan}</span>
                     </div>
                   </div>
                 </div>
@@ -1621,17 +1650,6 @@ export default function Home() {
                   >
                     Selesai & Keluar
                   </button>
-                  <a
-                    href={getWhatsAppLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    onMouseMove={handleMagneticMove}
-                    onMouseLeave={handleMagneticLeave}
-                    className="w-full btn-light py-3 text-[11px] font-bold flex items-center justify-center gap-1.5 border border-[#128C7E]/40 text-[#128C7E] hover:bg-[#128C7E]/5 transition-colors transition-all cursor-pointer"
-                  >
-                    💬 Chat Kadep Kamu ({deptInfo?.kadepName ?? "LO"})
-                  </a>
                 </div>
               </div>
             )}
